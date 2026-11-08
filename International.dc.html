@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Dental tourism in Split, Croatia. Velura Dental Clinic arranges your transfer, accommodation and language-matched coordinator — from your first photo to your return flight." />
+<title>International Patients · Velura Dental Clinic · Split</title>
+<meta property="og:title" content="International Patients · Velura Dental Clinic" />
+<meta property="og:description" content="Combine your treatment with a stay in Split. Free transfer, a coordinator who speaks your language, written plan in 48 hours." />
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; }
+  a:hover { color: #0E3B52; }
+  button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; }
+  .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+    .vcol4-mob { grid-template-columns: 1fr !important; }
+    .vsplit-mob { grid-template-columns: 1fr !important; }
+    .vtimeline-head { display: none !important; }
+    .vtimeline-row { grid-template-columns: 1fr !important; gap: 6px !important; padding: 20px !important; align-items: start !important; }
+    .vtimeline-row .vtimeline-mlabel { display: inline; font-weight: 600; color: #0E3B52; margin-right: 4px; letter-spacing: 0; text-transform: none; font-family: 'Manrope', system-ui, sans-serif; font-size: 13.5px; }
+    .vtimeline-row .vtimeline-total { display: none !important; }
+    .vhero-stats { grid-template-columns: 1fr !important; gap: 8px !important; left: 14px !important; right: 14px !important; bottom: 14px !important; }
+    .vform-card { padding: 32px 22px !important; }
+    .vstep-row { grid-template-columns: 1fr !important; gap: 16px !important; padding: 24px !important; }
+    .vstep-row .vstep-vlabel { display: none !important; }
+  }
+  .vtimeline-mlabel { display: none; }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="international" hint-size="100%,140px"></dc-import>
+
+<main>
+  <!-- Hero -->
+  <section style="padding: 72px 28px 60px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;" class="vsplit-mob">
+      <div>
+        <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— International patients</div>
+        <h1 data-reveal class="velura-serif" style="font-size: 68px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 24px; letter-spacing: -0.01em;">Combine your treatment with a stay in Split.</h1>
+        <p data-reveal style="font-size: 18.5px; line-height: 1.6; color: #5D6B70; margin: 0 0 32px;">For over fifteen years we've been the quiet choice for patients from the UK, Germany, Austria, Scandinavia and Italy. We'll plan everything before you book your flight — so your trip feels like a holiday, not a hospital visit.</p>
+        <div data-reveal style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#plan" style="background: #3E9C9A; color: #FBFAF7; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; box-shadow: 0 8px 22px rgba(62,156,154,0.28);">Start your free plan →</a>
+          <a href="{{ whatsappHref }}" style="background: #FBFAF7; color: #0E3B52; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid rgba(14,59,82,0.12); display: inline-flex; align-items: center; gap: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2z"/></svg>
+            WhatsApp Maja
+          </a>
+        </div>
+      </div>
+      <div data-reveal style="height: 520px; border-radius: 24px; overflow: hidden; background: #E7EEF2; position: relative; box-shadow: 0 28px 60px rgba(14,59,82,0.2);">
+        <img src="uploads/split-old-town-aerial.jpg" alt="Aerial view of Split's old town" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(14,59,82,0.35) 100%); pointer-events: none;"></div>
+        <div class="vhero-stats" style="position: absolute; bottom: 24px; left: 24px; right: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+          <div style="background: rgba(251,250,247,0.95); border-radius: 12px; padding: 14px;">
+            <div class="velura-mono" style="font-size: 10.5px; color: #3E9C9A; letter-spacing: 0.16em;">PATIENTS FROM</div>
+            <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; line-height: 1;">30+</div>
+            <div style="font-size: 11.5px; color: #5D6B70;">countries since 2010</div>
+          </div>
+          <div style="background: rgba(251,250,247,0.95); border-radius: 12px; padding: 14px;">
+            <div class="velura-mono" style="font-size: 10.5px; color: #3E9C9A; letter-spacing: 0.16em;">AVERAGE SAVING</div>
+            <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; line-height: 1;">60%</div>
+            <div style="font-size: 11.5px; color: #5D6B70;">vs UK, DE, AT prices</div>
+          </div>
+          <div style="background: rgba(251,250,247,0.95); border-radius: 12px; padding: 14px;">
+            <div class="velura-mono" style="font-size: 10.5px; color: #3E9C9A; letter-spacing: 0.16em;">AIRPORT TRANSFER</div>
+            <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; line-height: 1;">free</div>
+            <div style="font-size: 11.5px; color: #5D6B70;">door-to-door, both ways</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-step journey -->
+  <section id="plan" style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 64px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Your Velura journey</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Five steps, planned carefully, so nothing surprises you.</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+          <div data-reveal class="vstep-row vsplit-mob" style="background: #F3EEE6; border-radius: 20px; padding: 36px 40px; display: grid; grid-template-columns: 120px 1fr auto; gap: 40px; align-items: center;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+              <div class="velura-serif" style="font-size: 64px; color: #3E9C9A; font-weight: 500; line-height: 1;">{{ s.n }}</div>
+              <div class="velura-mono" style="font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #5D6B70;">{{ s.tag }}</div>
+            </div>
+            <div>
+              <h3 class="velura-serif" style="font-size: 30px; font-weight: 600; color: #0E3B52; margin: 0 0 10px; line-height: 1.15;">{{ s.title }}</h3>
+              <p style="font-size: 16px; line-height: 1.6; color: #5D6B70; margin: 0; max-width: 620px;">{{ s.body }}</p>
+            </div>
+            <div class="velura-mono vstep-vlabel" style="font-size: 11px; letter-spacing: 0.18em; color: #0E3B52; text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg);">Step {{ s.n }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we arrange -->
+  <section style="padding: 112px 28px; background: #F3EEE6;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 48px; flex-wrap: wrap;">
+        <div style="max-width: 640px;">
+          <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— What we arrange for you</div>
+          <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Everything that isn't dentistry, we take care of.</h2>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;" class="vcol4-mob">
+        <sc-for list="{{ arrange }}" as="a" hint-placeholder-count="4">
+          <div data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px; min-height: 280px;">
+            <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(62,156,154,0.14); color: #0E3B52; display: flex; align-items: center; justify-content: center;" dangerouslySetInnerHTML="{{ a.iconHtml }}"></div>
+            <h3 class="velura-serif" style="font-size: 22px; font-weight: 600; color: #0E3B52; margin: 0; line-height: 1.2;">{{ a.title }}</h3>
+            <p style="font-size: 14.5px; line-height: 1.55; color: #5D6B70; margin: 0;">{{ a.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typical timelines -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— How long you'll need to be here</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Typical timelines for international patients.</h2>
+      </div>
+      <div data-reveal style="background: #FBFAF7; border: 1px solid rgba(14,59,82,0.08); border-radius: 20px; overflow: hidden;">
+        <div class="vtimeline-head" style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 20px; padding: 22px 32px; background: #0E3B52; color: rgba(255,255,255,0.72); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;">
+          <div>Treatment</div><div>Visits</div><div>Days in Split</div><div>Total time</div>
+        </div>
+        <sc-for list="{{ timelines }}" as="r" hint-placeholder-count="4">
+          <div class="vtimeline-row" style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 20px; padding: 22px 32px; border-bottom: 1px solid rgba(14,59,82,0.06); align-items: center;">
+            <div><div class="velura-serif" style="font-size: 20px; color: #0E3B52; font-weight: 600;">{{ r.name }}</div><div style="font-size: 13px; color: #8798A0; margin-top: 2px;">{{ r.lead }}</div></div>
+            <div style="font-size: 15px; color: #1C2528;"><span class="vtimeline-mlabel">Visits: </span>{{ r.visits }}</div>
+            <div style="font-size: 15px; color: #1C2528;"><span class="vtimeline-mlabel">Days in Split: </span>{{ r.days }}</div>
+            <div class="velura-mono vtimeline-total" style="font-size: 13px; color: #3E9C9A;">{{ r.total }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee & aftercare -->
+  <section style="padding: 112px 28px; background: #0E3B52; color: #FBFAF7;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;" class="vsplit-mob">
+      <div data-reveal>
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Guarantee &amp; aftercare</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #FBFAF7; margin: 0 0 24px; letter-spacing: -0.01em;">The work follows you home.</h2>
+        <p style="font-size: 17.5px; line-height: 1.65; color: rgba(255,255,255,0.78); margin: 0 0 32px; max-width: 540px;">If something needs adjustment after you return home, you don't fly back. Your dentist adjusts it locally and we reimburse the cost, up to the agreed amount. In writing. Across Europe.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <sc-for list="{{ guarantees }}" as="g" hint-placeholder-count="4">
+            <div style="display: flex; align-items: start; gap: 14px; padding: 14px 18px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <div style="width: 28px; height: 28px; border-radius: 50%; background: #3E9C9A; color: #FBFAF7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; font-weight: 700;">{{ g.years }}y</div>
+              <div><div class="velura-serif" style="font-size: 20px; color: #FBFAF7; font-weight: 600; line-height: 1.2;">{{ g.title }}</div><div style="font-size: 14px; color: rgba(255,255,255,0.72); margin-top: 2px;">{{ g.body }}</div></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div data-reveal style="height: 520px; border-radius: 24px; background: linear-gradient(135deg, #3E9C9A 0%, #0E3B52 70%, #061F2B 100%); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent 0 40px, rgba(255,255,255,0.03) 40px 41px);"></div>
+        <div style="position: absolute; bottom: 28px; left: 28px; right: 28px; background: rgba(251,250,247,0.97); border-radius: 16px; padding: 22px 24px; color: #0E3B52;">
+          <div class="velura-mono" style="font-size: 11px; letter-spacing: 0.16em; color: #3E9C9A; margin-bottom: 6px;">AFTERCARE PROTOCOL</div>
+          <div class="velura-serif" style="font-size: 24px; font-weight: 600; line-height: 1.2; margin-bottom: 10px;">Video follow-up at 1, 3 and 12 months.</div>
+          <div style="font-size: 14px; color: #5D6B70; line-height: 1.55;">Email check-ins and your own patient coordinator for as long as you have a tooth from us.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting to Split -->
+  <section style="padding: 112px 28px; background: #F3EEE6;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Getting to Split</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Easier to reach than you think.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="vcol3-mob">
+        <div data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 32px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(62,156,154,0.14); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E3B52" stroke-width="1.6"><path d="M12 2L15 10l7 1-5 5 1 6-6-3-6 3 1-6-5-5 7-1z" fill="none"/><path d="M2 20l8-2 2 2 2-2 8 2"/></svg></div>
+          <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; margin-bottom: 10px; line-height: 1.2;">By air</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #5D6B70; margin: 0 0 16px;">Split Airport (SPU) is 25 minutes by car from the clinic. Direct flights from London, Manchester, Frankfurt, Munich, Vienna, Oslo, Stockholm, Milan and Rome in season.</p>
+          <div class="velura-mono" style="font-size: 12px; color: #3E9C9A; letter-spacing: 0.14em;">FREE TRANSFER · BOTH WAYS</div>
+        </div>
+        <div data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 32px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(62,156,154,0.14); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E3B52" stroke-width="1.6"><path d="M3 18s1-2 4-2 5 2 8 2 5-2 5-2M3 14s1-2 4-2 5 2 8 2 5-2 5-2M8 10l3-6h2l3 6"/></svg></div>
+          <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; margin-bottom: 10px; line-height: 1.2;">By ferry</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #5D6B70; margin: 0 0 16px;">Overnight ferries from Ancona (IT) land 10 minutes' walk from our door. Perfect if you're combining treatment with a longer road trip through Italy and the Balkans.</p>
+          <div class="velura-mono" style="font-size: 12px; color: #3E9C9A; letter-spacing: 0.14em;">10 MIN WALK TO CLINIC</div>
+        </div>
+        <div data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 32px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(62,156,154,0.14); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E3B52" stroke-width="1.6"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M4 11h16M9 20h6"/><circle cx="8" cy="18" r="1.5"/><circle cx="16" cy="18" r="1.5"/></svg></div>
+          <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; margin-bottom: 10px; line-height: 1.2;">By bus or car</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #5D6B70; margin: 0 0 16px;">Direct coaches from Zagreb, Munich, Vienna and Ljubljana. Split's main bus station is next to the ferry port — walking distance to the clinic.</p>
+          <div class="velura-mono" style="font-size: 12px; color: #3E9C9A; letter-spacing: 0.14em;">PUBLIC PARKING · 5 MIN WALK</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Things to enjoy -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— A quiet week in Split</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 20px; letter-spacing: -0.01em;">Treatment by day. Dinner on the water by night.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #5D6B70; margin: 0; max-width: 620px;">Most of our patients tell us their visit felt more like a short holiday than a dental trip. Three favourites our team always recommends:</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="vcol3-mob">
+        <sc-for list="{{ enjoy }}" as="e" hint-placeholder-count="3">
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 14px;" data-reveal>
+            <div style="height: 320px; border-radius: 20px; background: #E7EEF2; position: relative; overflow: hidden;">
+              <img src="uploads/{{ e.img }}" alt="{{ e.title }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+              <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(14,59,82,0.65) 100%); pointer-events: none;"></div>
+              <div style="position: absolute; bottom: 20px; left: 20px; color: #FBFAF7; font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; line-height: 1.1;">{{ e.title }}</div>
+            </div>
+            <figcaption style="font-size: 14.5px; line-height: 1.6; color: #5D6B70;">{{ e.body }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free online consultation form -->
+  <section style="padding: 112px 28px 120px; background: #F3EEE6;">
+    <div class="vform-card" style="max-width: 1080px; margin: 0 auto; background: #FBFAF7; border-radius: 28px; padding: 64px 72px; border: 1px solid rgba(14,59,82,0.06); box-shadow: 0 32px 64px rgba(14,59,82,0.06);">
+      <div data-reveal style="text-align: center; margin-bottom: 44px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 16px;">— Free online consultation</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.1; font-weight: 500; color: #0E3B52; margin: 0 0 14px; letter-spacing: -0.01em;">Get your treatment plan in 48 hours.</h2>
+        <p style="font-size: 16.5px; color: #5D6B70; max-width: 560px; margin: 0 auto;">Upload your X-ray or a few phone photos of your smile. Written plan with fixed prices, no card needed.</p>
+      </div>
+      <form onSubmit="{{ onSubmit }}" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;" class="vcol2-mob">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Your name</label><input required style="{{ inputStyle }}" placeholder="Jane Smith" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Country</label><input style="{{ inputStyle }}" placeholder="United Kingdom" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Email</label><input required type="email" style="{{ inputStyle }}" placeholder="jane@example.com" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">WhatsApp number</label><input style="{{ inputStyle }}" placeholder="+44 7700 000000" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Treatment of interest</label>
+          <select style="{{ inputStyle }}">
+            <option>Dental implants</option><option>All-on-4 / All-on-6</option><option>Veneers &amp; smile makeover</option><option>Crowns &amp; bridges</option><option>Teeth whitening</option><option>Root canal</option><option>Invisible aligners</option><option>Something else / not sure</option>
+          </select>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Upload X-ray or photos (optional)</label>
+          <div style="padding: 20px; border: 1.5px dashed rgba(14,59,82,0.18); border-radius: 12px; color: #5D6B70; font-size: 14px; text-align: center; background: #FBFAF7;">Drop files here or <span style="color: #3E9C9A; text-decoration: underline; cursor: pointer;">browse</span> · JPG, PNG, PDF · up to 20 MB</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Tell us a little</label><textarea rows="4" style="{{ inputStyle }}" placeholder="What would you like to change? Any concerns, medications, timing?"></textarea></div>
+        <div style="grid-column: 1 / -1; display: flex; align-items: start; gap: 10px; font-size: 13.5px; color: #5D6B70; line-height: 1.5;">
+          <input type="checkbox" required style="margin-top: 3px; accent-color: #3E9C9A;" />
+          <span>I agree to <a href="Privacy.dc.html" style="color: #3E9C9A; text-decoration: underline;">the Privacy Policy</a>. You'll only hear from Maja or your assigned doctor about your plan.</span>
+        </div>
+        <div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-top: 12px; flex-wrap: wrap; gap: 16px;">
+          <div style="font-size: 13.5px; color: #8798A0; display: inline-flex; align-items: center; gap: 8px;"><span style="color: #3E9C9A;">✦</span> Demo form — your data stays here.</div>
+          <button type="submit" style="background: #3E9C9A; color: #FBFAF7; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 15px; border: none; cursor: pointer; box-shadow: 0 10px 24px rgba(62,156,154,0.28);">Send request →</button>
+        </div>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="grid-column: 1 / -1; background: rgba(46,139,87,0.12); border: 1px solid rgba(46,139,87,0.3); border-radius: 12px; padding: 18px 20px; color: #2E8B57; font-size: 15px;">
+            <strong>Thank you.</strong> Maja will reply within a working day — check your inbox and WhatsApp.
+          </div>
+        </sc-if>
+      </form>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+  renderVals() {
+    const V = window.VELURA || {};
+    const ic = (svg) => ({ __html: svg });
+
+    const steps = [
+      { n: "1", tag: "Day 0 · 5 min", title: "Send your X-ray or photos", body: "Upload a panoramic X-ray or a few clear phone photos of your smile. We review with the relevant specialist within 48 hours — free, no card, no obligation." },
+      { n: "2", tag: "Day 1–2 · 48 h", title: "Receive your written plan", body: "A detailed, itemised plan with fixed prices and timings. Options explained in plain language. We're happy to answer questions by email, WhatsApp or video." },
+      { n: "3", tag: "Pre-arrival", title: "Everything booked for you", body: "Your coordinator confirms appointment times, books your airport transfer and helps choose an apartment or hotel 2–8 minutes from the clinic. In your language, in your time zone." },
+      { n: "4", tag: "Your week in Split", title: "Treatment, with time to breathe", body: "Unhurried appointments, most mornings free of them. Our assistants text you reminders. Dinner recommendations on request." },
+      { n: "5", tag: "Back home + onwards", title: "Aftercare at home", body: "Follow-up by video call at 1, 3 and 12 months. If something needs adjustment locally, we coordinate directly with your home dentist." },
+    ];
+
+    const arrange = [
+      { title: "Free airport transfer", body: "From Split Airport (SPU) to your apartment, and back — both ways, both patients and companions.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12l16-4v3L10 14l-2 4H6l-1-6z"/><path d="M5 20h14"/></svg>') },
+      { title: "Accommodation partners", body: "Hand-picked apartments and hotels within 2–8 minutes of the clinic. Member rates, no booking fees.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10l8-6 8 6v10"/><rect x="9" y="13" width="6" height="7"/></svg>') },
+      { title: "Your coordinator", body: "Maja is your single point of contact — in English, German or Italian — from first message to final follow-up.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>') },
+      { title: "Flexible appointments", body: "Early mornings, evenings and Saturdays available for international patients. Travel companions welcome.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>') },
+    ];
+
+    const timelines = [
+      { name: "Veneers · up to 8", lead: "Including Digital Smile Design preview", visits: "1 visit", days: "5 – 7 days", total: "~ 1 week" },
+      { name: "Crowns & bridges", lead: "Milled in our in-house lab", visits: "1 visit", days: "5 – 7 days", total: "~ 1 week" },
+      { name: "Implants · 1–4", lead: "Straumann, including healing", visits: "2 visits", days: "1–2 + 5–7 days", total: "3 – 6 months apart" },
+      { name: "All-on-4 / All-on-6", lead: "Fixed temporary bridge same day", visits: "2 visits", days: "3–5 + 5–7 days", total: "4 – 6 months apart" },
+    ];
+
+    const guarantees = [
+      { years: 10, title: "Implants", body: "Up to 10 years on implants." },
+      { years: 5, title: "Crowns & veneers", body: "5 years on zirconia, E.max crowns and veneers." },
+      { years: 2, title: "Fillings & endo", body: "2 years on composite fillings and root canal treatment." },
+      { years: 1, title: "Aligners retention", body: "1 year on retainers and post-orthodontic stability." },
+    ];
+
+    const enjoy = [
+      { title: "Diocletian's Palace", img: "diocletian-peristyle.jpg", body: "A 1,700-year-old Roman palace that's still a living neighbourhood. Coffee on the Peristyle, dinner on a stone courtyard." },
+      { title: "The islands", img: "hvar-blue-cave.jpg", body: "Hvar, Brač and Vis are a short catamaran away. Our team can arrange a day trip the day you arrive or before you fly out." },
+      { title: "The sea, five steps away", img: "bacvice-beach-morning.jpg", body: "Bačvice beach is a 10-minute walk from the clinic. Most of our patients swim before their morning appointment — it helps, honestly." },
+    ];
+
+    return {
+      steps, arrange, timelines, guarantees, enjoy,
+      whatsappHref: V.CONTACT ? V.CONTACT.whatsappHref : "https://wa.me/38521000000",
+      sent: this.state.sent,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      inputStyle: {
+        background: "#F3EEE6",
+        border: "1px solid rgba(14,59,82,0.08)",
+        borderRadius: "12px",
+        padding: "14px 16px",
+        fontSize: "15px",
+        fontFamily: "inherit",
+        color: "#1C2528",
+        outline: "none",
+        transition: "border-color 160ms ease, background 160ms ease",
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

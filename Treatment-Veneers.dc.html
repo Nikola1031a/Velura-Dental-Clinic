@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="E.max porcelain veneers &amp; full smile makeovers in Split, from €390 per tooth. Digital Smile Design preview before a single tooth is touched." />
+<title>Veneers &amp; smile makeover · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#1C2528;background:#FBFAF7;-webkit-font-smoothing:antialiased}*,*::before,*::after{box-sizing:border-box}a{color:#3E9C9A;text-decoration:none}a:hover{color:#0E3B52}button{font-family:inherit}</style>
+</helmet>
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+<dc-import name="TreatmentPage"
+  treatment-name="Veneers &amp; smile makeover"
+  short-name="veneers"
+  category="Aesthetic dentistry"
+  intro="Hand-layered E.max veneers, shaped around the face you actually have. Designed digitally, approved by you before your teeth are even touched."
+  from="from €390 per tooth"
+  hero-bg="linear-gradient(135deg, #D4A24A 0%, #D4C8B4 50%, #FBFAF7 100%)"
+  hero-image="veneers-digital-preview.jpg"
+  for-who="{{ forWho }}" steps="{{ steps }}"
+  visits-intro="A one-trip treatment. You see your new smile on screen before anything is touched, wear a preview in your own mouth, then leave a week later with the real thing."
+  visits="{{ visits }}" materials="{{ materials }}" prices="{{ prices }}" before-after="{{ beforeAfter }}" faqs="{{ faqs }}"
+  hint-size="100%,100%"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      forWho: [
+        "Your front teeth are discoloured, chipped, worn or uneven — and whitening alone won't be enough.",
+        "You have small gaps or asymmetries you've learnt to hide in photos.",
+        "You've tried composite bonding or crowns before and want something that actually lasts.",
+        "You want a result that looks like you — only rested, younger, deliberate. Not a Hollywood cliché.",
+      ],
+      steps: [
+        { n: "1", title: "Digital Smile Design", body: "Photos and a scan are used to design your new smile digitally. Dr. Juras works with you — on screen — until the shape, shade and proportions feel right." },
+        { n: "2", title: "Mock-up in your mouth", body: "Before a single tooth is touched, you wear a temporary version of the design in your own mouth. Smile at it, speak at it, go to dinner. Approve, or adjust." },
+        { n: "3", title: "Minimal prep & scan", body: "Only 0.3–0.5 mm of enamel is reshaped — far less than crowns. Digital impressions in 90 seconds." },
+        { n: "4", title: "Hand-layered E.max veneers", body: "Our ceramist layers your veneers by hand, a few metres from your chair. Tried in, adjusted, bonded." },
+      ],
+      visits: [
+        { label: "Days 1–2", tag: "Preview & design", body: "Consultation, photos, Digital Smile Design session, agreed mock-up. You leave with a preview in your mouth." },
+        { label: "Days 3–6", tag: "Prep, build, fit", body: "Minimal preparation, digital impressions, in-house milling and layering, try-in, final bonding. A final polish and you're done." },
+      ],
+      materials: [
+        { initials: "EM", name: "E.max (lithium disilicate)", body: "Ivoclar's gold-standard porcelain. Hand-layered for lifelike depth." },
+        { initials: "DSD", name: "Digital Smile Design", body: "Certified clinic. Design agreed on screen before anything irreversible." },
+        { initials: "VB", name: "Variolink Esthetic", body: "Premium adhesive cement that lasts decades without a dark margin." },
+        { initials: "KA", name: "Katana composite veneers", body: "No-prep alternative for lighter cases — reversible, same-visit." },
+      ],
+      prices: [
+        { label: "E.max veneer · per tooth", sub: "Hand-layered, in-house", price: "from €390" },
+        { label: "Composite veneer · per tooth", sub: "No-prep, same-day", price: "from €180" },
+        { label: "Digital Smile Design preview", sub: "Deducted from your treatment", price: "€150" },
+        { label: "Full upper arch · 10 veneers", sub: "Smile-makeover package", price: "from €3,650" },
+        { label: "Full smile · 20 veneers", sub: "Upper + lower aesthetic rehabilitation", price: "from €6,900" },
+      ],
+      beforeAfter: [
+        { title: "6× E.max veneers · upper", meta: "1 visit · 6 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #948A7D 0%, #635A51 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #D4E4EA 60%, #3E9C9A 100%)" },
+        { title: "10× veneers · smile makeover", meta: "1 visit · 8 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A8378 0%, #5D5447 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #EFDFBB 60%, #D4A24A 100%)" },
+      ],
+      faqs: [
+        { q: "Will my veneers look fake?", a: "Not if you choose Velura. Dr. Juras designs around your face — your age, your skin tone, how your lip moves — not a generic 'Hollywood' template. The result looks like the smile you should have had all along." },
+        { q: "How long do veneers last?", a: "E.max veneers from our clinic come with a 5-year written guarantee and routinely last 15–20 years. The porcelain itself doesn't stain or discolour; only the bond at the gum line is wear-dependent." },
+        { q: "Do I lose a lot of tooth?", a: "No. Modern minimal-prep veneers remove 0.3–0.5 mm of enamel — the thickness of a fingernail. Traditional crowns remove ten times that. Composite veneers remove nothing at all." },
+        { q: "Can I see the result before you start?", a: "Yes. That's the point of Digital Smile Design. You see your new smile digitally, then wear a temporary version of it in your mouth — before any prep. Approve, adjust, or walk away." },
+        { q: "How many teeth should I do?", a: "Only the ones that show when you smile — usually 4, 6, 8 or 10 teeth. Dr. Juras will show you on screen which teeth need to be included for the result to look natural." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

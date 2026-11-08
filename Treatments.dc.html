@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Specialist dental treatments at Velura Dental Clinic, Split — implantology, aesthetic dentistry, prosthetics, general &amp; preventive care, orthodontics and emergencies." />
+<title>Treatments · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; }
+  a:hover { color: #0E3B52; }
+  button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; }
+  .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+
+<main>
+  <section style="padding: 80px 28px 60px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1180px; margin: 0 auto; text-align: center;">
+      <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Treatments</div>
+      <h1 data-reveal class="velura-serif" style="font-size: 72px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 20px; letter-spacing: -0.01em;">Dentistry, done by<br />specialists.</h1>
+      <p data-reveal style="max-width: 640px; margin: 0 auto; font-size: 18px; line-height: 1.6; color: #5D6B70;">Each category below is led by a specialist. Every case is reviewed as a team before your treatment plan is written.</p>
+    </div>
+  </section>
+
+  <section style="padding: 72px 28px 96px; background: #F3EEE6;">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px;">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+        <div data-reveal>
+          <div style="display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid rgba(14,59,82,0.12); flex-wrap: wrap;">
+            <div>
+              <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 8px;">{{ g.tag }}</div>
+              <h2 class="velura-serif" style="font-size: 40px; line-height: 1.1; font-weight: 500; color: #0E3B52; margin: 0;">{{ g.label }}</h2>
+            </div>
+            <div style="max-width: 420px; font-size: 15px; line-height: 1.6; color: #5D6B70;">{{ g.lead }}</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="vcol3-mob">
+            <sc-for list="{{ g.items }}" as="t" hint-placeholder-count="3">
+              <a href="{{ t.slug }}" style="background: #FBFAF7; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; color: #1C2528; border: 1px solid rgba(14,59,82,0.05); min-height: 220px;" style-hover="{{ hoverCard }}">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                  <h3 class="velura-serif" style="font-size: 22px; font-weight: 600; color: #0E3B52; margin: 0; line-height: 1.2; flex: 1;">{{ t.name }}</h3>
+                  <span class="velura-mono" style="font-size: 12.5px; color: #3E9C9A; font-weight: 500; padding: 5px 10px; background: rgba(62,156,154,0.1); border-radius: 999px; white-space: nowrap;">{{ t.from }}</span>
+                </div>
+                <p style="font-size: 14.5px; line-height: 1.55; color: #5D6B70; margin: 0; flex: 1;">{{ t.lead }}</p>
+                <div style="font-size: 13.5px; color: #0E3B52; font-weight: 600;">Learn more →</div>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+  renderVals() {
+    const V = window.VELURA || {};
+    const T = V.TREATMENTS || [];
+    const getGroup = (name) => T.filter(t => t.group === name);
+
+    const groups = [
+      { tag: "01", label: "Implantology", lead: "Missing teeth, replaced for life. Led by Dr. Luka Vidović, 15+ years with Straumann and Nobel Biocare.", items: getGroup("Implantology") },
+      { tag: "02", label: "Aesthetic dentistry", lead: "Veneers, smile makeovers and whitening — planned around your face, not a template. Led by Dr. Petra Juras.", items: getGroup("Aesthetic dentistry") },
+      { tag: "03", label: "Prosthetics", lead: "Crowns and bridges milled in our own lab from zirconia or E.max — natural-looking and built to last.", items: getGroup("Prosthetics") },
+      { tag: "04", label: "General & preventive", lead: "Hygiene, fillings and microscope-guided root canals. The quiet work that keeps everything else lasting.", items: getGroup("General & preventive") },
+      { tag: "05", label: "Orthodontics", lead: "Invisible aligners, planned in 3D before you start — see your result before day one.", items: getGroup("Orthodontics") },
+      { tag: "06", label: "Emergency", lead: "Pain, broken teeth or lost fillings? Same-day care, in a clinic that will remember your name.", items: getGroup("Emergency") },
+    ];
+
+    return { groups, hoverCard: { boxShadow: "0 16px 32px rgba(14,59,82,0.1)", transform: "translateY(-2px)", borderColor: "rgba(62,156,154,0.3)" } };
+  }
+}
+</script>
+</body>
+</html>

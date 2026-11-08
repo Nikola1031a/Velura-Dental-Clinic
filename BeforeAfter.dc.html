@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="velura.js"></script>
+</helmet>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px;">
+  <div ref="{{ setRoot }}" onMouseDown="{{ onDown }}" onTouchStart="{{ onDown }}" style="{{ wrapStyle }}">
+    <!-- BEFORE layer -->
+    <div style="{{ beforeStyle }}">
+      <div style="position: absolute; top: 18px; left: 18px; background: rgba(28,37,40,0.72); color: #FBFAF7; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; padding: 6px 12px; border-radius: 999px;">BEFORE</div>
+      <div style="position: absolute; bottom: 18px; left: 18px; right: 18px; color: rgba(255,255,255,0.85); font-size: 12px; font-family: 'JetBrains Mono', ui-monospace, monospace;">Your case photos here</div>
+    </div>
+    <!-- AFTER layer clipped -->
+    <div style="{{ afterStyle }}">
+      <div style="{{ afterInnerStyle }}">
+        <div style="position: absolute; top: 18px; right: 18px; background: #3E9C9A; color: #FBFAF7; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; padding: 6px 12px; border-radius: 999px;">AFTER</div>
+        <div style="position: absolute; bottom: 18px; left: 18px; right: 18px; color: rgba(255,255,255,0.95); font-size: 12px; font-family: 'JetBrains Mono', ui-monospace, monospace;">Your case photos here</div>
+      </div>
+    </div>
+    <!-- Handle -->
+    <div style="{{ handleLineStyle }}"></div>
+    <div style="{{ handleKnobStyle }}">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M8 5 L4 11 L8 17" stroke="#0E3B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /><path d="M14 5 L18 11 L14 17" stroke="#0E3B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </div>
+  </div>
+  <figcaption style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
+    <span class="velura-serif" style="font-size: 22px; color: #0E3B52; font-weight: 600;">{{ title }}</span>
+    <span style="font-size: 13px; color: #5D6B70; font-family: 'JetBrains Mono', ui-monospace, monospace;">{{ meta }}</span>
+  </figcaption>
+</figure>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;560px&quot;,&quot;height&quot;:&quot;440px&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Upper veneers · 6 teeth&quot;},&quot;beforeCaption&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;},&quot;afterCaption&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;},&quot;meta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Treatment: 6 days in Split&quot;},&quot;beforeBg&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;},&quot;afterBg&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;},&quot;height&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:360}}">
+class Component extends DCLogic {
+  state = { pct: 50, dragging: false };
+
+  componentDidMount() {
+    this._up = () => this.setState({ dragging: false });
+    this._mv = (e) => {
+      if (!this.state.dragging || !this._root) return;
+      const r = this._root.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+      const pct = Math.max(0, Math.min(100, (x / r.width) * 100));
+      this.setState({ pct });
+    };
+    window.addEventListener("mouseup", this._up);
+    window.addEventListener("touchend", this._up);
+    window.addEventListener("mousemove", this._mv);
+    window.addEventListener("touchmove", this._mv, { passive: true });
+  }
+  componentWillUnmount() {
+    window.removeEventListener("mouseup", this._up);
+    window.removeEventListener("touchend", this._up);
+    window.removeEventListener("mousemove", this._mv);
+    window.removeEventListener("touchmove", this._mv);
+  }
+
+  renderVals() {
+    const pct = this.state.pct;
+    const height = this.props.height || 360;
+    const beforeBg = this.props.beforeBg || "linear-gradient(135deg, #8A9299 0%, #5D6B70 50%, #3F4A4F 100%)";
+    const afterBg = this.props.afterBg || "linear-gradient(135deg, #D4E4EA 0%, #8AB6C4 50%, #3E9C9A 100%)";
+    const title = this.props.title || "Case";
+    const beforeCaption = this.props.beforeCaption || "";
+    const afterCaption = this.props.afterCaption || "";
+    const meta = this.props.meta || "";
+
+    return {
+      title, beforeCaption, afterCaption, meta,
+      setRoot: (el) => { this._root = el; },
+      onDown: (e) => {
+        this.setState({ dragging: true });
+        if (!this._root) return;
+        const r = this._root.getBoundingClientRect();
+        const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+        const p = Math.max(0, Math.min(100, (x / r.width) * 100));
+        this.setState({ pct: p });
+      },
+      wrapStyle: {
+        position: "relative",
+        width: "100%",
+        height: height + "px",
+        borderRadius: "16px",
+        overflow: "hidden",
+        background: beforeBg,
+        cursor: "ew-resize",
+        userSelect: "none",
+        touchAction: "none",
+        boxShadow: "0 24px 44px rgba(14,59,82,0.14)",
+      },
+      beforeStyle: {
+        position: "absolute", inset: 0,
+        background: beforeBg,
+      },
+      afterStyle: {
+        position: "absolute", inset: 0,
+        clipPath: `inset(0 0 0 ${pct}%)`,
+        transition: this.state.dragging ? "none" : "clip-path 180ms ease",
+      },
+      afterInnerStyle: {
+        position: "absolute", inset: 0,
+        background: afterBg,
+      },
+      handleLineStyle: {
+        position: "absolute", top: 0, bottom: 0,
+        left: `calc(${pct}% - 1px)`,
+        width: "2px",
+        background: "#FBFAF7",
+        boxShadow: "0 0 0 1px rgba(14,59,82,0.15)",
+        pointerEvents: "none",
+      },
+      handleKnobStyle: {
+        position: "absolute", top: "50%",
+        left: `calc(${pct}% - 22px)`,
+        width: "44px", height: "44px",
+        borderRadius: "50%",
+        background: "#FBFAF7",
+        boxShadow: "0 8px 20px rgba(14,59,82,0.3)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        transform: "translateY(-50%)",
+        cursor: "ew-resize",
+        pointerEvents: "none",
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

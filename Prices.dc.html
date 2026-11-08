@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Transparent dental prices at Velura, Split. Written treatment plan with fixed prices before treatment starts. Implants from €950, veneers from €390." />
+<title>Prices · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; }
+  a:hover { color: #0E3B52; }
+  button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; }
+  .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="prices" hint-size="100%,140px"></dc-import>
+
+<main>
+  <section style="padding: 80px 28px 60px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 980px; margin: 0 auto; text-align: center;">
+      <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Prices</div>
+      <h1 data-reveal class="velura-serif" style="font-size: 72px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 24px; letter-spacing: -0.01em;">Clear prices, no&nbsp;surprises.</h1>
+      <p data-reveal style="font-size: 19px; line-height: 1.6; color: #5D6B70; margin: 0 auto 32px; max-width: 680px;">You receive a written treatment plan with fixed prices before any treatment starts. If anything changes mid-treatment, you approve first — always.</p>
+      <div data-reveal style="display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+        <a href="Contact.dc.html" style="background: #3E9C9A; color: #FBFAF7; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; box-shadow: 0 8px 22px rgba(62,156,154,0.28);">Get your personal quote →</a>
+        <a href="International.dc.html" style="background: #FBFAF7; color: #0E3B52; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid rgba(14,59,82,0.12);">For international patients</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 28px; background: #F3EEE6;">
+    <div style="max-width: 1120px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px;" class="vcol3-mob">
+        <sc-for list="{{ promises }}" as="p" hint-placeholder-count="3">
+          <div data-reveal style="background: #FBFAF7; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;">
+            <div class="velura-mono" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #3E9C9A;">{{ p.tag }}</div>
+            <div class="velura-serif" style="font-size: 22px; color: #0E3B52; font-weight: 600; line-height: 1.2;">{{ p.title }}</div>
+            <div style="font-size: 14.5px; line-height: 1.55; color: #5D6B70;">{{ p.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <sc-for list="{{ tables }}" as="t" hint-placeholder-count="8">
+          <section data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 36px 40px; border: 1px solid rgba(14,59,82,0.06);">
+            <div style="display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 22px; padding-bottom: 20px; border-bottom: 1px solid rgba(14,59,82,0.08); flex-wrap: wrap;">
+              <h3 class="velura-serif" style="font-size: 30px; font-weight: 600; color: #0E3B52; margin: 0; letter-spacing: -0.005em;">{{ t.title }}</h3>
+              <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #3E9C9A;">{{ t.tag }}</div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <sc-for list="{{ t.rows }}" as="r" hint-placeholder-count="4">
+                <div class="vprice-row" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 14px 0; border-bottom: 1px dashed rgba(14,59,82,0.1); align-items: baseline;">
+                  <div>
+                    <div style="font-size: 16.5px; color: #1C2528; font-weight: 500;">{{ r.label }}</div>
+                    <sc-if value="{{ r.sub }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-size: 13px; color: #8798A0; margin-top: 2px;">{{ r.sub }}</div>
+                    </sc-if>
+                  </div>
+                  <div class="velura-serif" style="font-size: 22px; color: #0E3B52; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap;">{{ r.price }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </section>
+        </sc-for>
+      </div>
+
+      <div data-reveal style="background: #0E3B52; border-radius: 20px; padding: 40px 44px; margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; color: #FBFAF7;" class="vcol2-mob">
+        <div>
+          <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 10px;">Payment</div>
+          <div class="velura-serif" style="font-size: 30px; font-weight: 600; line-height: 1.2; margin-bottom: 14px;">Pay the way that works for you.</div>
+          <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.78);">Card, bank transfer, payment in installments. <strong style="color: #FBFAF7;">5% discount</strong> when you pay in full at the start of treatment.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: rgba(255,255,255,0.06); border-radius: 12px;"><div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(62,156,154,0.25); display: flex; align-items: center; justify-content: center;">💳</div><div style="font-size: 15px; color: #FBFAF7;">Visa · Mastercard · American Express</div></div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: rgba(255,255,255,0.06); border-radius: 12px;"><div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(62,156,154,0.25); display: flex; align-items: center; justify-content: center;">⇄</div><div style="font-size: 15px; color: #FBFAF7;">Bank transfer in EUR</div></div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: rgba(255,255,255,0.06); border-radius: 12px;"><div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(62,156,154,0.25); display: flex; align-items: center; justify-content: center;">÷</div><div style="font-size: 15px; color: #FBFAF7;">Installments · up to 12 months</div></div>
+        </div>
+      </div>
+
+      <div data-reveal style="margin-top: 28px; padding: 20px 24px; background: rgba(62,156,154,0.08); border-left: 3px solid #3E9C9A; border-radius: 12px; font-size: 14.5px; line-height: 1.6; color: #5D6B70;">
+        <strong style="color: #0E3B52;">A note on prices.</strong> Prices shown above are indicative. Your final price depends on your individual treatment plan. You always receive a written, itemised plan with fixed prices before anything starts.
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+  renderVals() {
+    const promises = [
+      { tag: "— 01", title: "Fixed prices", body: "Your treatment plan locks in prices in writing. Nothing changes without your approval." },
+      { tag: "— 02", title: "Free online quote", body: "Send us your X-ray and you'll have a full plan with prices within 48 hours. No card, no deposit, no catch." },
+      { tag: "— 03", title: "Save 40–70%", body: "Specialist European dentistry at a fraction of UK, DE, AT and SCAN prices — without compromising on materials or guarantee." },
+    ];
+
+    const tables = [
+      { title: "Consultation & diagnostics", tag: "— Before you start", rows: [
+        { label: "Check-up & personal treatment plan", sub: "Free for international patients", price: "free" },
+        { label: "Panoramic X-ray", sub: "Free when combined with treatment", price: "€40" },
+        { label: "3D CBCT scan", sub: "Three-dimensional imaging, deducted from treatment", price: "€80" },
+        { label: "Second opinion consultation", sub: "In-person or video call", price: "free" },
+      ]},
+      { title: "Implantology", tag: "— Missing teeth", rows: [
+        { label: "Dental implant (Straumann)", sub: "Swiss implant, including surgery", price: "from €950" },
+        { label: "Implant crown · zirconia", sub: "Milled in our in-house lab", price: "from €450" },
+        { label: "Bone grafting", sub: "When needed to secure the implant", price: "from €350" },
+        { label: "Sinus lift", sub: "Upper jaw, when extra bone is needed", price: "from €600" },
+      ]},
+      { title: "All-on-4 / All-on-6", tag: "— Fixed teeth in a week", rows: [
+        { label: "All-on-4 with a fixed bridge", sub: "Four implants, one full fixed jaw", price: "from €5,900 / jaw" },
+        { label: "All-on-6", sub: "Six implants, for maximum stability", price: "from €7,200 / jaw" },
+        { label: "Immediate temporary bridge", sub: "Leave Split with teeth, same day", price: "included" },
+      ]},
+      { title: "Aesthetic dentistry", tag: "— Smile makeover", rows: [
+        { label: "E.max veneer (porcelain)", sub: "Hand-layered, per tooth", price: "from €390 / tooth" },
+        { label: "Composite veneer", sub: "No-prep, same-day, per tooth", price: "from €180 / tooth" },
+        { label: "Digital Smile Design preview", sub: "3D preview of your new smile · deducted from treatment", price: "€150" },
+      ]},
+      { title: "Prosthetics", tag: "— Crowns & bridges", rows: [
+        { label: "Zirconia crown", sub: "Metal-free, in-house milled", price: "from €420" },
+        { label: "Metal-ceramic crown", sub: "Classic choice, long-lasting", price: "from €290" },
+        { label: "E.max crown", sub: "Front teeth, maximum aesthetics", price: "from €480" },
+        { label: "Bridge · 3 units", sub: "Fixed replacement for 1 missing tooth", price: "from €1,050" },
+      ]},
+      { title: "Whitening", tag: "— Teeth whitening", rows: [
+        { label: "In-office whitening (ZOOM!)", sub: "90 minutes, visible result same day", price: "€290" },
+        { label: "Home whitening kit", sub: "Custom trays and professional gel", price: "€220" },
+        { label: "Combined whitening", sub: "In-office + home kit", price: "€390" },
+      ]},
+      { title: "General & preventive", tag: "— The everyday work", rows: [
+        { label: "Hygiene & polishing", sub: "Ultrasonic scaling, air-polishing", price: "€60" },
+        { label: "Composite filling", sub: "Metal-free, matched to your tooth", price: "from €60" },
+        { label: "Root canal treatment", sub: "Microscope-guided, per canal", price: "from €120 / canal" },
+        { label: "Tooth extraction", sub: "Simple extraction", price: "from €80" },
+      ]},
+      { title: "Orthodontics", tag: "— Straight teeth", rows: [
+        { label: "Invisible aligners (full case)", sub: "Planned in 3D, including all aligners", price: "from €2,400" },
+        { label: "Aligners — short case", sub: "Minor correction, up to 6 months", price: "from €1,400" },
+        { label: "Retainers · set of 2", sub: "To keep your new smile", price: "€220" },
+      ]},
+    ];
+
+    return { promises, tables };
+  }
+}
+</script>
+</body>
+</html>

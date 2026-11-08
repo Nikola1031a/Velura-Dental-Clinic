@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="velura.js"></script>
+</helmet>
+<sc-if value="{{ visible }}" hint-placeholder-val="{{ false }}">
+  <div class="vcookie" style="position: fixed; left: 24px; right: 24px; bottom: 24px; max-width: 580px; margin: 0 auto; background: #FBFAF7; border: 1px solid rgba(14,59,82,0.1); border-radius: 18px; padding: 22px 24px; box-shadow: 0 24px 48px rgba(14,59,82,0.18); z-index: 120; display: flex; align-items: center; gap: 20px;">
+    <div style="flex: 1; font-size: 14px; color: #1C2528; line-height: 1.55;">
+      {{ text }} <a href="Cookies.dc.html" style="color: #3E9C9A; text-decoration: underline;">{{ policy }}</a>.
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button onClick="{{ onSettings }}" style="background: transparent; border: 1px solid rgba(14,59,82,0.18); color: #0E3B52; padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 13.5px; cursor: pointer;">{{ settingsLabel }}</button>
+      <button onClick="{{ onAccept }}" style="background: #0E3B52; border: none; color: #FBFAF7; padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 13.5px; cursor: pointer;">{{ acceptLabel }}</button>
+    </div>
+  </div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;700px&quot;,&quot;height&quot;:&quot;180px&quot;}}">
+class Component extends DCLogic {
+  state = { visible: false, lang: (window.VELURA && window.VELURA.getLang && window.VELURA.getLang()) || "EN" };
+  componentDidMount() {
+    try {
+      const v = localStorage.getItem("velura.cookies");
+      if (!v) setTimeout(() => this.setState({ visible: true }), 900);
+    } catch (e) {}
+    this._onLang = (e) => this.setState({ lang: (e && e.detail) || window.VELURA.getLang() });
+    window.addEventListener("velura:lang", this._onLang);
+  }
+  componentWillUnmount() { window.removeEventListener("velura:lang", this._onLang); }
+  renderVals() {
+    const V = window.VELURA || {};
+    const t = V.t || ((k) => k);
+    return {
+      visible: this.state.visible,
+      text: t("cookie.text"),
+      policy: t("cookie.policy"),
+      settingsLabel: t("cookie.settings"),
+      acceptLabel: t("cookie.accept"),
+      onAccept: () => {
+        try { localStorage.setItem("velura.cookies", "accepted"); } catch (e) {}
+        this.setState({ visible: false });
+      },
+      onSettings: () => {
+        try { localStorage.setItem("velura.cookies", "settings"); } catch (e) {}
+        this.setState({ visible: false });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

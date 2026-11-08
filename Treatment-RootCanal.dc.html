@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Microscope-guided root canal treatment in Split, from €120 per canal. Specialist endodontics that saves teeth most clinics would extract." />
+<title>Root canal (microscope) · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#1C2528;background:#FBFAF7;-webkit-font-smoothing:antialiased}*,*::before,*::after{box-sizing:border-box}a{color:#3E9C9A;text-decoration:none}a:hover{color:#0E3B52}button{font-family:inherit}</style>
+</helmet>
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+<dc-import name="TreatmentPage"
+  treatment-name="Root canal treatment"
+  short-name="root canal treatment"
+  category="General &amp; preventive · Endodontics"
+  intro="A deep infection in a tooth doesn't have to mean losing it. Under Dr. Šore's microscope, teeth most clinics would pull are saved — calmly, often in a single visit."
+  from="from €120 per canal"
+  hero-bg="linear-gradient(135deg, #0E3B52 0%, #3E9C9A 70%, #D4E4EA 100%)"
+  hero-image="dental-microscope-view.jpg"
+  for-who="{{ forWho }}" steps="{{ steps }}"
+  visits-intro="Most root canals take one, sometimes two visits of 60–90 minutes. A final crown over the treated tooth is usually fitted in a later appointment to protect it long-term."
+  visits="{{ visits }}" materials="{{ materials }}" prices="{{ prices }}" before-after="{{ beforeAfter }}" faqs="{{ faqs }}"
+  hint-size="100%,100%"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      forWho: [
+        "You have severe, throbbing toothache that wakes you at night.",
+        "A tooth has been painful to bite on for days or weeks and won't settle.",
+        "You've been told a tooth needs extraction — but you'd prefer a specialist second opinion first.",
+        "A previous root canal has failed and the tooth is painful or infected again.",
+      ],
+      steps: [
+        { n: "1", title: "Diagnosis & CBCT scan", body: "A targeted 3D scan shows the full anatomy of the roots — curved canals, hidden canals, previous failures. Nothing is guessed at." },
+        { n: "2", title: "Numb & isolate", body: "The tooth is fully numbed (we use a modern precision anaesthetic that works even on 'hot' teeth). A rubber dam keeps everything else dry and clean." },
+        { n: "3", title: "Microscope-guided cleaning", body: "Under 25× magnification Dr. Šore locates every canal, cleans the infection out and shapes each canal to the millimetre." },
+        { n: "4", title: "Seal & restore", body: "Canals are sealed with bio-ceramic cement that bonds to the tooth. A permanent restoration — usually a crown — protects the tooth for decades." },
+      ],
+      visits: [
+        { label: "Visit A", tag: "60–90 min · root canal", body: "Diagnosis, numbing, cleaning, filling of canals. Most cases finish in a single appointment; complex cases are completed in a second visit a week later." },
+        { label: "Visit B", tag: "1 week later · crown", body: "A zirconia or E.max crown is prepared and fitted to protect the treated tooth. Essential for back teeth that bear chewing load." },
+      ],
+      materials: [
+        { initials: "Z", name: "Zeiss OPMI pico", body: "The microscope that lets us see what the naked eye can't. Up to 25× magnification." },
+        { initials: "NI", name: "Nickel-titanium files", body: "Flexible rotary files that follow curved canals without perforating them." },
+        { initials: "BC", name: "BioCeramic sealer", body: "Modern sealer that bonds to dentine and seals canals for decades." },
+        { initials: "RD", name: "Rubber dam", body: "The quiet secret of successful endodontics. Isolates the tooth. Keeps you comfortable." },
+      ],
+      prices: [
+        { label: "Root canal · single-rooted tooth", sub: "Front teeth, usually 1 canal", price: "from €120" },
+        { label: "Root canal · multi-rooted tooth", sub: "Premolars & molars, 2–4 canals", price: "from €240" },
+        { label: "Re-treatment of failed root canal", sub: "Removing old filling, finding missed canals", price: "from €320" },
+        { label: "3D CBCT scan", sub: "Targeted 3D view of the roots", price: "€80" },
+        { label: "Crown over treated tooth", sub: "Protection essential for back teeth", price: "from €420" },
+      ],
+      beforeAfter: [
+        { title: "Molar · 4 canals saved", meta: "1 visit · 90 min", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #5D5447 0%, #3B3328 100%)", afterBg: "linear-gradient(135deg, #E8F2F2 0%, #3E9C9A 100%)" },
+        { title: "Re-treatment · previously failed", meta: "2 visits · 7 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #6D7A80 0%, #3F4A4F 100%)", afterBg: "linear-gradient(135deg, #D4E4EA 0%, #8AB6C4 100%)" },
+      ],
+      faqs: [
+        { q: "Is a root canal still painful?", a: "No. Modern endodontics is quieter and calmer than the reputation suggests. Dr. Šore's patients routinely tell us the appointment was more comfortable than a difficult filling at their old dentist. The reputation comes from untreated infections, not from the treatment itself." },
+        { q: "Why save a tooth instead of extracting it?", a: "Natural teeth come with a periodontal ligament that senses pressure — nothing we build replaces it fully. A well-treated tooth will outlast most restorations, and saves you the cost and surgery of an implant." },
+        { q: "What's the success rate?", a: "Microscope-guided root canals have a documented success rate of 90–95% at 10 years." },
+        { q: "Why does my tooth need a crown afterwards?", a: "Root canal treatment removes the nerve, which also provides moisture to the tooth. Over time, a root-canalled tooth becomes brittle and is more likely to crack. A crown protects it from chewing load for decades." },
+        { q: "Can you re-treat a previous root canal?", a: "Often yes. Many 'failed' root canals are simply incomplete — a missed canal, a crack, old filling material short of the tip. Under a microscope we can usually find and fix what was missed." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

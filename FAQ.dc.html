@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Everything to ask before you fly — prices, pain, guarantees, aftercare, travel. 20+ questions, honestly answered." />
+<title>FAQ · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; } a:hover { color: #0E3B52; } button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; } .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) { .vsplit-mob { grid-template-columns: 1fr !important; } }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="faq" hint-size="100%,140px"></dc-import>
+
+<main>
+  <section style="padding: 72px 28px 48px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— FAQ</div>
+      <h1 data-reveal class="velura-serif" style="font-size: 72px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 24px; letter-spacing: -0.01em;">Everything to ask<br />before you fly.</h1>
+      <p data-reveal style="max-width: 620px; font-size: 18px; line-height: 1.6; color: #5D6B70; margin: 0;">Twenty-four honest answers. If yours isn't here, WhatsApp Maja — she replies within the working day.</p>
+    </div>
+  </section>
+
+  <section style="padding: 56px 28px 112px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;" class="vsplit-mob">
+      <nav data-reveal style="position: sticky; top: 160px;">
+        <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #5D6B70; margin-bottom: 14px;">— Jump to</div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+            <a href="{{ s.anchor }}" style="padding: 10px 14px; font-size: 14.5px; color: #0E3B52; border-radius: 10px; display: block; border-left: 2px solid rgba(62,156,154,0.25);">{{ s.label }} <span class="velura-mono" style="font-size: 11.5px; color: #8798A0; letter-spacing: 0.1em; margin-left: 4px;">· {{ s.count }}</span></a>
+          </sc-for>
+        </div>
+      </nav>
+      <div style="display: flex; flex-direction: column; gap: 56px;">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+          <section id="{{ s.id }}" data-reveal>
+            <div style="padding-bottom: 20px; margin-bottom: 24px; border-bottom: 1px solid rgba(14,59,82,0.12);">
+              <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 6px;">{{ s.tag }}</div>
+              <h2 class="velura-serif" style="font-size: 36px; line-height: 1.1; font-weight: 500; color: #0E3B52; margin: 0;">{{ s.label }}</h2>
+            </div>
+            <dc-import name="FaqAccordion" items="{{ s.items }}" hint-size="100%,400px"></dc-import>
+          </section>
+        </sc-for>
+
+        <div data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 36px 40px; border: 1px solid rgba(14,59,82,0.06); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;">
+          <div><div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; margin-bottom: 4px;">Still something unclear?</div><div style="font-size: 15px; color: #5D6B70;">Maja answers in English, German or Italian, usually within the hour.</div></div>
+          <div style="display: flex; gap: 10px;">
+            <a href="Contact.dc.html" style="background: #3E9C9A; color: #FBFAF7; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 14.5px;">Ask a question →</a>
+            <a href="{{ whatsappHref }}" style="background: transparent; color: #0E3B52; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 14.5px; border: 1px solid rgba(14,59,82,0.15);">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+  renderVals() {
+    const V = window.VELURA || {};
+    const groups = [
+      { id: "before", tag: "— 01", label: "Before your visit", items: [
+        { q: "Is the consultation really free?", a: "Yes — for international patients your first consultation and written treatment plan are free. We only charge for actual diagnostics (a 3D CBCT scan is €80, deducted from your treatment if you proceed)." },
+        { q: "How do I send you my X-ray or photos?", a: "Through our contact form, by email, or over WhatsApp — whichever is easiest. If you don't have an X-ray yet, a few clear phone photos of your smile are more than enough to start. We'll tell you if we need more before you fly." },
+        { q: "Do I need to be in Split to get a plan?", a: "No. Most of our plans are agreed before anyone gets on a plane. You send us your photos or X-ray, we send back a written plan with fixed prices and timings within 48 hours. A short video call usually seals the details." },
+        { q: "Can I bring a companion?", a: "Of course — and we recommend it. Our partner apartments sleep two comfortably, and Split is a lovely city to be in with someone." },
+        { q: "What should I bring?", a: "Your previous X-rays if you have them, a list of your medications, and comfortable clothes. We do everything else." },
+      ]},
+      { id: "treatment", tag: "— 02", label: "Treatment & pain", items: [
+        { q: "Is the treatment painful?", a: "Modern dentistry has quietly changed. We use topical anaesthetic before any injection, precision anaesthetic systems, and sedation if you prefer. Most patients tell us a cleaning at their old dentist felt more intense than an implant at Velura." },
+        { q: "Do you offer sedation?", a: "Yes. We offer conscious inhalation sedation (nitrous oxide) and oral sedation for patients who feel anxious. For complex surgical cases, intravenous sedation with an anaesthesiologist is available." },
+        { q: "Can I eat and drink normally after my visit?", a: "After routine work — yes, almost immediately. After implants or extractions we'll give you a simple one-page guide: soft foods for a day or two, no hot drinks the first evening, and specific instructions if anything matters for your case." },
+        { q: "Can you treat nervous patients?", a: "Many of our international patients tell us they hadn't been to a dentist in years before Velura. Low lights, calm rooms, long appointments, honest explanations, and sedation if you want it. No judgement, no lectures." },
+      ]},
+      { id: "prices", tag: "— 03", label: "Prices & payment", items: [
+        { q: "Are the prices on your site final?", a: "The 'from' prices show the starting point for standard cases. Your written plan — which you get before anything starts — contains the final, fixed prices for your specific treatment." },
+        { q: "Can I pay in installments?", a: "Yes, we offer installment plans up to 12 months for larger treatments. We also give a 5% discount if you choose to pay in full at the start of treatment." },
+        { q: "Can I pay in GBP or USD?", a: "We invoice in EUR, but you can pay by card in any currency (your bank will do the conversion at the day's rate) or by bank transfer in EUR from your home account." },
+        { q: "Do you take dental insurance?", a: "We don't bill insurers directly, but we provide the detailed invoice you'll need to claim back from insurers in the UK, Germany, Austria, Scandinavia and Italy. Most private policies reimburse Velura care in full for the covered portion." },
+      ]},
+      { id: "guarantee", tag: "— 04", label: "Guarantee & aftercare", items: [
+        { q: "What does the guarantee cover?", a: "Our written guarantee covers manufacturing or placement failure — up to 10 years on implants, 5 years on crowns and veneers, 2 years on composite fillings and root canal treatment. It does not cover accidents, non-attendance at your scheduled cleanings, or neglect." },
+        { q: "What if I have a problem after I return home?", a: "Message Maja first. For small adjustments, your home dentist can handle them and we reimburse the agreed cost. For anything bigger, we fly you back — on us for the first 5 years for guarantee work." },
+        { q: "How long do implants last?", a: "Modern implants from Straumann and Nobel Biocare have a documented 95%+ success rate at 10 years, and the vast majority last for the patient's lifetime with ordinary care. The crown on top is replaced every 15–20 years as a wear item." },
+        { q: "Do I need to fly back for check-ups?", a: "No. We do video check-ups at 1, 3 and 12 months, then yearly. Your home hygienist handles cleanings. We're only a video call away if anything needs a second opinion." },
+      ]},
+      { id: "travel", tag: "— 05", label: "Travel & accommodation", items: [
+        { q: "Do you help with accommodation?", a: "Yes. We have partner apartments and hotels within 2–8 minutes of the clinic, at member rates. Maja sends you three options tailored to your dates and budget, with honest notes on each." },
+        { q: "Is the airport transfer really free?", a: "Yes — door-to-door, both ways, for patients and their companions. A driver meets you at arrivals with a sign. Return pickup is confirmed the day before your flight." },
+        { q: "How much time should I plan to stay?", a: "It depends on the treatment. Veneers, crowns and whitening: 5–7 days. A single implant: 1–2 days (then a second trip of 5–7 days 3–6 months later). All-on-4: 3–5 days + 5–7 days later. Your plan will tell you exactly." },
+        { q: "Is Split expensive?", a: "Less than most European capitals. A good dinner is €30–50 per person, a nice apartment €90–140 per night. Many patients tell us the whole trip — flights, apartment, dining — costs less than the treatment alone would at home." },
+        { q: "What if my flight is cancelled?", a: "Tell Maja as soon as you know. We rearrange appointments at no cost and help with rebooking. Your treatment plan doesn't change." },
+      ]},
+    ];
+
+    const sections = groups.map(g => ({ ...g, anchor: "#" + g.id, count: g.items.length }));
+
+    return {
+      sections,
+      whatsappHref: V.CONTACT ? V.CONTACT.whatsappHref : "https://wa.me/38521000000",
+    };
+  }
+}
+</script>
+</body>
+</html>

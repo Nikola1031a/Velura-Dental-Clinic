@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="All-on-4 and All-on-6 at Velura, Split. Full fixed teeth on four or six implants, same week. From €5,900 per jaw, 10-year guarantee." />
+<title>All-on-4 &amp; All-on-6 · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#1C2528;background:#FBFAF7;-webkit-font-smoothing:antialiased}*,*::before,*::after{box-sizing:border-box}a{color:#3E9C9A;text-decoration:none}a:hover{color:#0E3B52}button{font-family:inherit}</style>
+</helmet>
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+<dc-import name="TreatmentPage"
+  treatment-name="All-on-4 &amp; All-on-6"
+  short-name="All-on-4"
+  category="Implantology · Full-arch"
+  intro="A full, fixed set of teeth on just four or six implants — placed and functioning in a single week. For patients who've worn dentures too long, or lost teeth to severe gum disease."
+  from="from €5,900 per jaw"
+  hero-bg="linear-gradient(135deg, #0E3B52 0%, #1A5673 50%, #3E9C9A 100%)"
+  hero-image="all-on-4-finished-arch.jpg"
+  for-who="{{ forWho }}" steps="{{ steps }}"
+  visits-intro="A two-trip treatment. You leave Split after your first visit with a fixed temporary bridge — eating pizza the night of surgery is not unusual. The final permanent bridge is fitted on visit two, after your bone has fully integrated."
+  visits="{{ visits }}" materials="{{ materials }}" prices="{{ prices }}" before-after="{{ beforeAfter }}" faqs="{{ faqs }}"
+  hint-size="100%,100%"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      forWho: [
+        "You wear a full denture that slips, clicks, or has stopped fitting as your jaw has changed.",
+        "You've lost most or all of your teeth in one or both jaws and want fixed teeth, not removable ones.",
+        "You've been told you'd need bone grafting for individual implants — All-on-4 usually avoids it.",
+        "You want a complete, predictable rehabilitation in one week, not a multi-year reconstruction.",
+      ],
+      steps: [
+        { n: "1", title: "3D planning & simulation", body: "A CBCT scan, digital planning and a preview of your new smile before a single implant is placed." },
+        { n: "2", title: "Surgery day", body: "Any remaining teeth are removed, four (or six) implants are placed at angles that use your strongest bone. Under sedation if you'd like." },
+        { n: "3", title: "Fixed temporary bridge · same day", body: "You leave the clinic with a fixed, screwed-in bridge. Soft food for a few weeks, but teeth that look and work like teeth." },
+        { n: "4", title: "Final bridge · 4–6 months later", body: "Once the implants are fully integrated, the permanent zirconia bridge is designed, milled and fitted. This is the one you keep." },
+      ],
+      visits: [
+        { label: "Visit 1", tag: "3–5 days in Split", body: "Day 1: consultation, CBCT, blood work. Day 2: surgery and immediate temporary. Day 3–5: review, hygiene instructions, farewell check." },
+        { label: "Visit 2", tag: "4–6 months later · 5–7 days", body: "Digital impressions, trial-fitting of the final bridge, final fitting, long-term hygiene plan. You walk out with the smile you keep." },
+      ],
+      materials: [
+        { initials: "ST", name: "Straumann BLX", body: "Swiss implants designed specifically for immediate-load full-arch cases." },
+        { initials: "NB", name: "Nobel Biocare implants", body: "Premium alternative for complex cases." },
+        { initials: "ZR", name: "Zirconia bridge", body: "Metal-free, monolithic. Milled in our in-house lab. Won't chip, won't stain." },
+        { initials: "TR", name: "Ti-base connections", body: "Titanium bases that lock the bridge to your implants with a single screw per side." },
+      ],
+      prices: [
+        { label: "All-on-4 · one jaw", sub: "4 implants + fixed temporary + final zirconia bridge", price: "from €5,900" },
+        { label: "All-on-6 · one jaw", sub: "6 implants for maximum stability in difficult cases", price: "from €7,200" },
+        { label: "Both jaws · All-on-4", sub: "Complete full-mouth reconstruction", price: "from €11,200" },
+        { label: "Extractions & bone preparation", sub: "When needed, included in most cases", price: "included" },
+        { label: "Sedation (IV, with anaesthesiologist)", sub: "Optional, for anxious patients", price: "€450" },
+      ],
+      beforeAfter: [
+        { title: "All-on-4 · upper jaw", meta: "2 visits · 4 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #5D5447 0%, #3B3328 100%)", afterBg: "linear-gradient(135deg, #D4E4EA 0%, #3E9C9A 100%)" },
+        { title: "All-on-4 · lower jaw", meta: "2 visits · 5 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #7A7268 0%, #4A4238 100%)", afterBg: "linear-gradient(135deg, #E8F2F2 0%, #0E3B52 100%)" },
+      ],
+      faqs: [
+        { q: "Will I leave Split with teeth?", a: "Yes. You leave after Visit 1 with a fixed temporary bridge, screwed into the implants. Not a denture — a real, fixed set of teeth." },
+        { q: "Why only 4 implants for a whole jaw?", a: "Four implants placed at carefully calculated angles distribute chewing forces across your strongest bone. Over 25 years of research supports it. For particularly soft bone or very long jaws, we use six implants (All-on-6) for a safety margin." },
+        { q: "Is this painful?", a: "No more than a standard tooth extraction — and considerably less than years of a failing denture. We offer local anaesthetic, oral sedation, or IV sedation with an anaesthesiologist. Most patients are surprised at how little they felt." },
+        { q: "What's the difference between All-on-4 and All-on-6?", a: "The number of implants. All-on-4 works for most patients. We choose All-on-6 when the bone is particularly soft, the jaw is very long, or you grind heavily at night. The final result looks and feels identical." },
+        { q: "How do I clean it?", a: "Brush and floss as normal; we add a Waterpik and an interdental brush to reach around the implants. Your hygiene visits every six months keep everything healthy. We teach you everything in your post-op appointment." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

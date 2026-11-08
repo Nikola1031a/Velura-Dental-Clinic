@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Contact Velura Dental Clinic in Split — phone, WhatsApp, email, address and a booking form. Same-day emergency dental care available." />
+<title>Contact &amp; Booking · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; } a:hover { color: #0E3B52; } button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; } .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+    .vsplit-mob { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="contact" hint-size="100%,140px"></dc-import>
+
+<main>
+  <section style="padding: 72px 28px 48px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Contact</div>
+      <h1 data-reveal class="velura-serif" style="font-size: 72px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 20px; letter-spacing: -0.01em;">Let's talk.</h1>
+      <p data-reveal style="max-width: 620px; font-size: 18px; line-height: 1.6; color: #5D6B70; margin: 0;">Call, message, email, or send the form below. A real person — usually Maja — replies within the working day.</p>
+    </div>
+  </section>
+
+  <!-- Direct contact + Emergency -->
+  <section style="padding: 56px 28px 32px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;" class="vcol3-mob">
+      <a data-reveal href="{{ phoneHref }}" style="background: #FBFAF7; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; color: #1C2528; border: 1px solid rgba(14,59,82,0.05);" style-hover="{{ cardHover }}">
+        <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(62,156,154,0.14); display: flex; align-items: center; justify-content: center; color: #0E3B52;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke-linejoin="round" /></svg></div>
+        <div class="velura-mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A;">Call</div>
+        <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; line-height: 1.1;">{{ phone }}</div>
+        <div style="font-size: 14px; color: #5D6B70;">Mon–Fri 08:00–20:00 · Sat 09:00–14:00</div>
+      </a>
+      <a data-reveal href="{{ whatsappHref }}" style="background: #FBFAF7; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; color: #1C2528; border: 1px solid rgba(14,59,82,0.05);" style-hover="{{ cardHover }}">
+        <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(37,211,102,0.12); display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2z"/></svg></div>
+        <div class="velura-mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A;">WhatsApp</div>
+        <div class="velura-serif" style="font-size: 26px; color: #0E3B52; font-weight: 600; line-height: 1.1;">Chat with Maja</div>
+        <div style="font-size: 14px; color: #5D6B70;">Fastest way · EN · DE · IT · HR</div>
+      </a>
+      <a data-reveal href="{{ emailHref }}" style="background: #FBFAF7; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; color: #1C2528; border: 1px solid rgba(14,59,82,0.05);" style-hover="{{ cardHover }}">
+        <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(62,156,154,0.14); display: flex; align-items: center; justify-content: center; color: #0E3B52;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <div class="velura-mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A;">Email</div>
+        <div class="velura-serif" style="font-size: 22px; color: #0E3B52; font-weight: 600; line-height: 1.2; word-break: break-all;">{{ email }}</div>
+        <div style="font-size: 14px; color: #5D6B70;">Reply within the working day</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Emergency box -->
+  <section style="padding: 16px 28px 32px; background: #F3EEE6;">
+    <div data-reveal style="max-width: 1180px; margin: 0 auto; background: #C2412D; color: #FBFAF7; border-radius: 20px; padding: 32px 40px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;" class="vcol2-mob">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div style="width: 56px; height: 56px; border-radius: 14px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FBFAF7" stroke-width="1.8"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <div>
+          <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.85; margin-bottom: 4px;">— Dental emergency?</div>
+          <div class="velura-serif" style="font-size: 26px; font-weight: 600; line-height: 1.2; margin-bottom: 4px;">Call us. We'll see you today.</div>
+          <div style="font-size: 15px; opacity: 0.9; line-height: 1.5;">Same-day appointments for pain, broken teeth, lost fillings and dental trauma.</div>
+        </div>
+      </div>
+      <a href="{{ phoneHref }}" style="background: #FBFAF7; color: #C2412D; padding: 16px 26px; border-radius: 999px; font-weight: 700; font-size: 15px; white-space: nowrap; display: inline-flex; align-items: center; gap: 10px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke-linejoin="round"/></svg> {{ phone }}</a>
+    </div>
+  </section>
+
+  <!-- Booking form + info split -->
+  <section style="padding: 56px 28px 96px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: start;" class="vsplit-mob">
+      <form data-reveal onSubmit="{{ onSubmit }}" style="background: #FBFAF7; border-radius: 24px; padding: 48px 52px; border: 1px solid rgba(14,59,82,0.06); display: grid; grid-template-columns: 1fr 1fr; gap: 18px;" class="vcol2-mob">
+        <div style="grid-column: 1 / -1; margin-bottom: 8px;">
+          <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 10px;">— Request a consultation</div>
+          <h2 class="velura-serif" style="font-size: 36px; font-weight: 500; color: #0E3B52; margin: 0 0 6px; letter-spacing: -0.005em; line-height: 1.1;">Tell us about your smile.</h2>
+          <div style="font-size: 14px; color: #5D6B70;">All fields are optional unless marked.</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Name *</label><input required style="{{ inputStyle }}" placeholder="Your full name" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Email *</label><input required type="email" style="{{ inputStyle }}" placeholder="you@example.com" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Phone / WhatsApp</label><input style="{{ inputStyle }}" placeholder="+44 7700 000000" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Preferred language</label>
+          <select style="{{ inputStyle }}"><option>English</option><option>Deutsch</option><option>Italiano</option><option>Hrvatski</option></select>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Treatment of interest</label>
+          <select style="{{ inputStyle }}">
+            <sc-for list="{{ treatments }}" as="t" hint-placeholder-count="8"><option>{{ t }}</option></sc-for>
+          </select>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Preferred date</label><input type="date" style="{{ inputStyle }}" /></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Upload X-ray or photos</label>
+          <div style="padding: 20px; border: 1.5px dashed rgba(14,59,82,0.18); border-radius: 12px; color: #5D6B70; font-size: 14px; text-align: center; background: #F3EEE6;">Drop files here or <span style="color: #3E9C9A; text-decoration: underline; cursor: pointer;">browse</span> · JPG, PNG, PDF · up to 20 MB</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1;"><label style="font-size: 13px; color: #0E3B52; font-weight: 600;">Message</label><textarea rows="4" style="{{ inputStyle }}" placeholder="What would you like to know? Any concerns or questions."></textarea></div>
+
+        <div style="grid-column: 1 / -1; display: flex; align-items: start; gap: 10px; font-size: 13.5px; color: #5D6B70; line-height: 1.5;">
+          <input type="checkbox" required style="margin-top: 3px; accent-color: #3E9C9A;" />
+          <span>I agree to <a href="Privacy.dc.html" style="color: #3E9C9A; text-decoration: underline;">the Privacy Policy</a>. *</span>
+        </div>
+        <div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-top: 12px; flex-wrap: wrap; gap: 16px;">
+          <div style="font-size: 13.5px; color: #8798A0; display: inline-flex; align-items: center; gap: 8px;"><span style="color: #3E9C9A;">✦</span> Demo form — no data sent anywhere.</div>
+          <button type="submit" style="background: #3E9C9A; color: #FBFAF7; padding: 16px 32px; border-radius: 999px; font-weight: 600; font-size: 15px; border: none; cursor: pointer; box-shadow: 0 10px 24px rgba(62,156,154,0.28);">Send request →</button>
+        </div>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="grid-column: 1 / -1; background: rgba(46,139,87,0.12); border: 1px solid rgba(46,139,87,0.3); border-radius: 12px; padding: 18px 20px; color: #2E8B57; font-size: 15px; line-height: 1.5;">
+            <strong>Thank you.</strong> Your request has arrived with Maja. You'll hear back within the working day — check your inbox and WhatsApp.
+          </div>
+        </sc-if>
+      </form>
+
+      <aside style="display: flex; flex-direction: column; gap: 20px;">
+        <div data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 32px; border: 1px solid rgba(14,59,82,0.06);">
+          <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 12px;">— Find us</div>
+          <div class="velura-serif" style="font-size: 24px; color: #0E3B52; font-weight: 600; margin-bottom: 4px; line-height: 1.2;">Velura Dental Clinic</div>
+          <div style="font-size: 15px; color: #5D6B70; line-height: 1.5; margin-bottom: 20px;">{{ address }}</div>
+          <div style="height: 240px; border-radius: 14px; overflow: hidden; background: #E7EEF2; position: relative; margin-bottom: 18px;">
+            <iframe src="https://www.google.com/maps?q=Riva,+21000+Split,+Croatia&amp;z=16&amp;output=embed" title="Map: Riva, Split" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block;"></iframe>
+          </div>
+          <div style="font-size: 14px; line-height: 1.75; color: #5D6B70;">
+            <div style="display: flex; justify-content: space-between; gap: 12px;"><span>Mon–Fri</span><strong style="color: #0E3B52;">08:00 – 20:00</strong></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px;"><span>Saturday</span><strong style="color: #0E3B52;">09:00 – 14:00</strong></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px;"><span>Sunday</span><span style="color: #8798A0;">closed</span></div>
+          </div>
+        </div>
+
+        <div data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 32px; border: 1px solid rgba(14,59,82,0.06);">
+          <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 12px;">— Getting here</div>
+          <div style="font-size: 14.5px; line-height: 1.7; color: #5D6B70; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; gap: 10px;"><span style="color: #3E9C9A;">↳</span><span>10 min walk from the Split ferry port &amp; bus station</span></div>
+            <div style="display: flex; gap: 10px;"><span style="color: #3E9C9A;">↳</span><span>25 min drive from Split Airport (SPU) · free transfer</span></div>
+            <div style="display: flex; gap: 10px;"><span style="color: #3E9C9A;">↳</span><span>Public parking nearby · 5 min walk</span></div>
+            <div style="display: flex; gap: 10px;"><span style="color: #3E9C9A;">↳</span><span>Wheelchair accessible · ground floor entry</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;preselect&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+  renderVals() {
+    const V = window.VELURA || {};
+    const c = V.CONTACT || {};
+    const T = V.TREATMENTS || [];
+
+    const preset = this.props.preselect || "";
+    const treatments = ["Not sure yet — I'd like advice", ...T.map(t => t.name)];
+    if (preset) {
+      const idx = treatments.indexOf(preset);
+      if (idx > 0) { treatments.splice(idx, 1); treatments.unshift(preset); }
+    }
+
+    return {
+      treatments,
+      address: c.address || "Riva 7, 21000 Split, Croatia",
+      phone: c.phone || "+385 21 000 000",
+      phoneHref: c.phoneHref || "tel:+38521000000",
+      whatsappHref: c.whatsappHref || "https://wa.me/38521000000",
+      email: c.email || "hello@veluradental.example",
+      emailHref: c.emailHref || "mailto:hello@veluradental.example",
+      sent: this.state.sent,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); setTimeout(() => { if (typeof window !== "undefined") window.scrollTo({ top: window.scrollY, behavior: "smooth" }); }, 0); },
+      inputStyle: {
+        background: "#F3EEE6",
+        border: "1px solid rgba(14,59,82,0.08)",
+        borderRadius: "12px",
+        padding: "14px 16px",
+        fontSize: "15px",
+        fontFamily: "inherit",
+        color: "#1C2528",
+        outline: "none",
+      },
+      cardHover: { transform: "translateY(-2px)", boxShadow: "0 16px 32px rgba(14,59,82,0.08)", borderColor: "rgba(62,156,154,0.25)" },
+    };
+  }
+}
+</script>
+</body>
+</html>

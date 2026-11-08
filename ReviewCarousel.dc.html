@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="velura.js"></script>
+</helmet>
+<div style="position: relative;">
+  <div style="{{ trackWrap }}">
+    <div style="{{ trackStyle }}">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="5">
+        <article style="{{ r.cardStyle }}">
+          <div style="display: flex; align-items: center; gap: 4px; color: #D4A24A; font-size: 18px; margin-bottom: 20px;">★★★★★</div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 26px; line-height: 1.45; color: #0E3B52; margin: 0 0 32px; letter-spacing: -0.005em;">&ldquo;{{ r.text }}&rdquo;</p>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #3E9C9A, #0E3B52); color: #FBFAF7; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; letter-spacing: 0.02em;">{{ r.initial }}</div>
+            <div>
+              <div style="font-weight: 600; color: #1C2528; font-size: 15px;">{{ r.name }} <span style="margin-left: 6px;">{{ r.flag }}</span></div>
+              <div style="color: #5D6B70; font-size: 13.5px; margin-top: 2px;">{{ r.treatment }} · {{ r.country }}</div>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 28px; gap: 20px; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 14px; background: #FBFAF7; border: 1px solid rgba(14,59,82,0.08); border-radius: 999px; padding: 10px 20px 10px 14px;">
+      <div style="width: 32px; height: 32px; border-radius: 50%; background: #FBFAF7; border: 1px solid rgba(14,59,82,0.1); display: flex; align-items: center; justify-content: center;">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.6 9.2c0-.6-.1-1.2-.2-1.7H9v3.3h4.8c-.2 1.1-.8 2-1.8 2.6v2.2h2.9c1.7-1.6 2.7-3.9 2.7-6.4z" fill="#4285F4"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-2.9-2.2c-.8.5-1.8.9-3.1.9-2.4 0-4.4-1.6-5.1-3.8H.9v2.3A9 9 0 0 0 9 18z" fill="#34A853"/><path d="M3.9 10.7c-.2-.5-.3-1.1-.3-1.7s.1-1.2.3-1.7V5H.9A9 9 0 0 0 0 9c0 1.4.3 2.8.9 4l3-2.3z" fill="#FBBC05"/><path d="M9 3.6c1.3 0 2.5.5 3.5 1.4l2.6-2.6A9 9 0 0 0 9 0 9 9 0 0 0 .9 5l3 2.3C4.6 5.2 6.6 3.6 9 3.6z" fill="#EA4335"/></svg>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-weight: 700; color: #0E3B52; font-size: 17px;">4.9</span>
+        <span style="color: #D4A24A; font-size: 14px;">★★★★★</span>
+        <span style="color: #5D6B70; font-size: 13.5px;">· 284 Google reviews</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div style="display: flex; gap: 6px;">
+        <sc-for list="{{ dots }}" as="d" hint-placeholder-count="5">
+          <button onClick="{{ d.onClick }}" aria-label="Go to slide" style="{{ d.style }}"></button>
+        </sc-for>
+      </div>
+      <button onClick="{{ onPrev }}" aria-label="Previous" style="width: 48px; height: 48px; border-radius: 50%; background: #FBFAF7; border: 1px solid rgba(14,59,82,0.12); color: #0E3B52; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;">←</button>
+      <button onClick="{{ onNext }}" aria-label="Next" style="width: 48px; height: 48px; border-radius: 50%; background: #0E3B52; border: none; color: #FBFAF7; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;">→</button>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;900px&quot;,&quot;height&quot;:&quot;400px&quot;},&quot;reviews&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;any&gt;&quot;}}">
+class Component extends DCLogic {
+  state = { i: 0 };
+  renderVals() {
+    const raw = (this.props.reviews && this.props.reviews.length) ? this.props.reviews : (window.VELURA ? window.VELURA.REVIEWS : []);
+    const i = this.state.i;
+    const n = raw.length || 1;
+    const reviews = raw.map((r, idx) => ({
+      ...r,
+      initial: (r.name || "A").slice(0, 1),
+      cardStyle: {
+        minWidth: "100%",
+        boxSizing: "border-box",
+        padding: "48px 52px",
+        background: "#FBFAF7",
+        border: "1px solid rgba(14,59,82,0.08)",
+        borderRadius: "22px",
+        boxShadow: "0 18px 40px rgba(14,59,82,0.06)",
+      },
+    }));
+    const dots = raw.map((_, idx) => ({
+      onClick: () => this.setState({ i: idx }),
+      style: {
+        width: idx === i ? "24px" : "8px",
+        height: "8px",
+        borderRadius: "999px",
+        background: idx === i ? "#0E3B52" : "rgba(14,59,82,0.2)",
+        border: "none",
+        cursor: "pointer",
+        transition: "width 220ms ease, background 220ms ease",
+        padding: 0,
+      },
+    }));
+    return {
+      reviews,
+      dots,
+      trackWrap: { overflow: "hidden", borderRadius: "22px" },
+      trackStyle: {
+        display: "flex",
+        transform: `translateX(-${i * 100}%)`,
+        transition: "transform 460ms cubic-bezier(.3,.7,.3,1)",
+      },
+      onPrev: () => this.setState({ i: (i - 1 + n) % n }),
+      onNext: () => this.setState({ i: (i + 1) % n }),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  .velura-serif { font-family: 'Cormorant Garamond', serif; }
+  .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+    .vcol4-mob { grid-template-columns: 1fr !important; }
+    .vsplit-mob { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<main style="font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7;">
+  <!-- Hero -->
+  <section style="padding: 60px 28px 72px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <nav style="font-size: 13.5px; color: #8798A0; margin-bottom: 28px;"><a href="Home.dc.html" style="color: #5D6B70;">Home</a> <span style="margin: 0 10px; color: #CBD6DC;">/</span> <a href="Treatments.dc.html" style="color: #5D6B70;">Treatments</a> <span style="margin: 0 10px; color: #CBD6DC;">/</span> <span style="color: #0E3B52;">{{ name }}</span></nav>
+      <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: center;" class="vsplit-mob">
+        <div>
+          <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 16px;">— {{ category }}</div>
+          <h1 data-reveal class="velura-serif" style="font-size: 64px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 24px; letter-spacing: -0.01em;">{{ name }}</h1>
+          <p data-reveal style="font-size: 19px; line-height: 1.6; color: #5D6B70; margin: 0 0 32px; max-width: 540px;">{{ intro }}</p>
+          <div data-reveal style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 32px;">
+            <span class="velura-serif" style="font-size: 38px; color: #0E3B52; font-weight: 600; line-height: 1;">{{ from }}</span>
+            <span style="font-size: 14px; color: #8798A0;">· final price in your written plan</span>
+          </div>
+          <div data-reveal style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="{{ contactHref }}" style="background: #3E9C9A; color: #FBFAF7; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; box-shadow: 0 8px 22px rgba(62,156,154,0.28);">Ask about this treatment →</a>
+            <a href="{{ whatsappHref }}" style="background: #FBFAF7; color: #0E3B52; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid rgba(14,59,82,0.12); display: inline-flex; align-items: center; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div data-reveal style="height: 520px; border-radius: 24px; overflow: hidden; background: #E7EEF2; position: relative; box-shadow: 0 28px 60px rgba(14,59,82,0.18);">
+          <img src="uploads/{{ heroImage }}" alt="{{ name }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Is this for you? -->
+  <section style="padding: 96px 28px; background: #FBFAF7;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 36px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Is this treatment for you?</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 16px; letter-spacing: -0.01em;">{{ benefitTitle }}</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;" class="vcol2-mob">
+        <sc-for list="{{ forWho }}" as="w" hint-placeholder-count="4">
+          <div data-reveal style="background: #F3EEE6; border-radius: 16px; padding: 24px 28px; display: flex; gap: 16px; align-items: start;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: #3E9C9A; color: #FBFAF7; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 8l3 3 7-7"/></svg></div>
+            <div style="font-size: 15.5px; line-height: 1.55; color: #1C2528; padding-top: 4px;">{{ w }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section style="padding: 96px 28px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— How it works</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 16px; letter-spacing: -0.01em;">Step by step.</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div data-reveal style="background: #FBFAF7; border-radius: 18px; padding: 28px 32px; display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: start;">
+            <div class="velura-serif" style="font-size: 44px; color: #3E9C9A; font-weight: 500; line-height: 1;">{{ s.n }}</div>
+            <div><h3 class="velura-serif" style="font-size: 24px; color: #0E3B52; font-weight: 600; margin: 0 0 6px; line-height: 1.2;">{{ s.title }}</h3><p style="font-size: 15.5px; line-height: 1.6; color: #5D6B70; margin: 0;">{{ s.body }}</p></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- How many visits -->
+  <section style="padding: 96px 28px; background: #FBFAF7;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center;" class="vsplit-mob">
+      <div data-reveal>
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Time &amp; visits</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 16px; letter-spacing: -0.01em;">How many visits and how long?</h2>
+        <p style="font-size: 16.5px; line-height: 1.65; color: #5D6B70; margin: 0; max-width: 460px;">{{ visitsIntro }}</p>
+      </div>
+      <div data-reveal style="background: #0E3B52; color: #FBFAF7; border-radius: 22px; padding: 40px 44px;">
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <sc-for list="{{ visits }}" as="v" hint-placeholder-count="2">
+            <div class="vcol2-mob" style="display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: start;">
+              <div><div class="velura-serif" style="font-size: 28px; font-weight: 600; color: #3E9C9A; line-height: 1.1;">{{ v.label }}</div><div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.18em; color: rgba(255,255,255,0.55); margin-top: 6px; text-transform: uppercase;">{{ v.tag }}</div></div>
+              <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.8);">{{ v.body }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials -->
+  <section style="padding: 96px 28px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 36px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Materials we use</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 16px; letter-spacing: -0.01em;">The brands behind your care.</h2>
+        <p style="font-size: 16px; color: #5D6B70; max-width: 560px; margin: 0;">We use only the materials we'd want for our own families. No white-label shortcuts.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;" class="vcol4-mob">
+        <sc-for list="{{ materials }}" as="m" hint-placeholder-count="4">
+          <div data-reveal style="background: #FBFAF7; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; min-height: 160px; border: 1px solid rgba(14,59,82,0.06);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(62,156,154,0.12); color: #0E3B52; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 18px;">{{ m.initials }}</div>
+            <div class="velura-serif" style="font-size: 20px; color: #0E3B52; font-weight: 600; line-height: 1.2;">{{ m.name }}</div>
+            <div style="font-size: 13.5px; line-height: 1.5; color: #5D6B70;">{{ m.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prices -->
+  <section style="padding: 96px 28px; background: #FBFAF7;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 36px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Prices</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 16px; letter-spacing: -0.01em;">Written prices, in your plan, before you start.</h2>
+      </div>
+      <div data-reveal style="background: #F3EEE6; border-radius: 20px; padding: 32px 40px;">
+        <div style="display: flex; flex-direction: column;">
+          <sc-for list="{{ prices }}" as="p" hint-placeholder-count="4">
+            <div class="vprice-row" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 16px 0; border-bottom: 1px dashed rgba(14,59,82,0.12); align-items: baseline;">
+              <div><div style="font-size: 16.5px; color: #1C2528; font-weight: 500;">{{ p.label }}</div><sc-if value="{{ p.sub }}" hint-placeholder-val="{{ false }}"><div style="font-size: 13px; color: #8798A0; margin-top: 2px;">{{ p.sub }}</div></sc-if></div>
+              <div class="velura-serif" style="font-size: 22px; color: #0E3B52; font-weight: 600; white-space: nowrap;">{{ p.price }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <p style="margin: 20px 0 0; font-size: 13.5px; color: #8798A0; text-align: center;">Prices are indicative. See the full <a href="Prices.dc.html" style="color: #3E9C9A; text-decoration: underline;">price list</a> for context.</p>
+    </div>
+  </section>
+
+  <!-- Before & after -->
+  <section style="padding: 96px 28px; background: #F3EEE6;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 36px; flex-wrap: wrap;">
+        <div><div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Before &amp; after</div><h2 class="velura-serif" style="font-size: 44px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Real cases from our clinic.</h2></div>
+        <a href="Gallery.dc.html" style="color: #0E3B52; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 10px 2px; border-bottom: 1px solid #0E3B52;">Full smile gallery →</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;" class="vcol2-mob">
+        <sc-for list="{{ beforeAfter }}" as="b" hint-placeholder-count="2">
+          <div data-reveal><dc-import name="BeforeAfter" title="{{ b.title }}" meta="{{ b.meta }}" before-caption="{{ b.beforeCap }}" after-caption="{{ b.afterCap }}" before-bg="{{ b.beforeBg }}" after-bg="{{ b.afterBg }}" height="{{ 360 }}" hint-size="100%,440px"></dc-import></div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding: 96px 28px; background: #FBFAF7;">
+    <div style="max-width: 980px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 36px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Questions</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">{{ faqTitle }}</h2>
+      </div>
+      <div data-reveal><dc-import name="FaqAccordion" items="{{ faqs }}" hint-size="100%,400px"></dc-import></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 32px 28px 112px; background: #FBFAF7;">
+    <div data-reveal style="max-width: 1180px; margin: 0 auto; background: #0E3B52; color: #FBFAF7; border-radius: 28px; padding: 56px 64px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;" class="vcol2-mob">
+      <div>
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 14px;">— Next step</div>
+        <h2 class="velura-serif" style="font-size: 36px; line-height: 1.1; font-weight: 500; margin: 0 0 10px;">{{ askTitle }}</h2>
+        <p style="font-size: 16px; color: rgba(255,255,255,0.72); margin: 0; max-width: 560px;">Free online consultation, written plan with fixed prices in 48 hours, no card needed.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a href="{{ contactHref }}" style="background: #3E9C9A; color: #FBFAF7; padding: 16px 28px; border-radius: 999px; font-weight: 600; font-size: 15px; text-align: center; white-space: nowrap;">Get a free plan →</a>
+        <a href="{{ whatsappHref }}" style="background: transparent; color: #FBFAF7; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: 14.5px; text-align: center; border: 1px solid rgba(255,255,255,0.3); white-space: nowrap;">WhatsApp Maja</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;name&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Dental implants&quot;},&quot;shortName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;implants&quot;},&quot;category&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Implantology&quot;},&quot;intro&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Titanium roots that feel, look and work like natural teeth.&quot;},&quot;from&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;from €950&quot;},&quot;heroBg&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;},&quot;heroCaption&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;},&quot;forWho&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;},&quot;steps&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{n:string,title:string,body:string}&gt;&quot;},&quot;visitsIntro&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;},&quot;visits&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{label:string,tag:string,body:string}&gt;&quot;},&quot;materials&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{initials:string,name:string,body:string}&gt;&quot;},&quot;prices&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{label:string,sub?:string,price:string}&gt;&quot;},&quot;beforeAfter&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;any&gt;&quot;},&quot;faqs&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{q:string,a:string}&gt;&quot;},&quot;contactHref&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Contact.dc.html&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+  renderVals() {
+    const V = window.VELURA || {};
+    const p = this.props;
+    return {
+      name: p.treatmentName || p.name || "Treatment",
+      shortName: p.shortName || (p.name || "treatment").toLowerCase(),
+      benefitTitle: "You'll probably benefit from " + (p.shortName || "this treatment") + " if…",
+      faqTitle: "Common questions about " + (p.shortName || "this treatment") + ".",
+      askTitle: "Ask about " + (p.shortName || "this treatment") + ".",
+      category: p.category || "Treatment",
+      intro: p.intro || "",
+      from: p.from || "",
+      heroBg: p.heroBg || "linear-gradient(135deg, #0E3B52 0%, #3E9C9A 55%, #D4E4EA 100%)",
+      heroImage: p.heroImage || "",
+      forWho: p.forWho || [],
+      steps: p.steps || [],
+      visitsIntro: p.visitsIntro || "What to expect, from your first consult to your final appointment.",
+      visits: p.visits || [],
+      materials: p.materials || [],
+      prices: p.prices || [],
+      beforeAfter: p.beforeAfter || [],
+      faqs: p.faqs || [],
+      contactHref: p.contactHref || "Contact.dc.html",
+      whatsappHref: V.CONTACT ? V.CONTACT.whatsappHref : "https://wa.me/38521000000",
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Straumann dental implants in Split from €950. Specialist implantology at Velura Dental Clinic — 10-year guarantee, free international consultation." />
+<title>Dental implants · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; } a:hover { color: #0E3B52; } button { font-family: inherit; }
+</style>
+</helmet>
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+<dc-import name="TreatmentPage"
+  treatment-name="Dental implants"
+  short-name="implants"
+  category="Implantology"
+  intro="A titanium root placed where your tooth used to be, with a crown on top. It feels, chews and lasts like a natural tooth — and for most patients, it will outlast everything else."
+  from="from €950"
+  hero-bg="linear-gradient(135deg, #0E3B52 0%, #3E9C9A 55%, #D4E4EA 100%)"
+  hero-image="implant-placement-closeup.jpg"
+  for-who="{{ forWho }}"
+  steps="{{ steps }}"
+  visits-intro="Implants are a two-visit treatment: the implant placement, then the final crown after healing. A temporary tooth fills the gap between."
+  visits="{{ visits }}"
+  materials="{{ materials }}"
+  prices="{{ prices }}"
+  before-after="{{ beforeAfter }}"
+  faqs="{{ faqs }}"
+  hint-size="100%,100%"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      forWho: [
+        "You're missing one or more teeth and don't want a bridge that grinds down healthy neighbours.",
+        "Your dentures move when you talk or eat and you'd prefer fixed teeth you forget about.",
+        "You lost a tooth to trauma, decay or gum disease and want a lifelong, natural-feeling replacement.",
+        "You've been told you don't have enough bone — we add it with grafting, in the same visit.",
+      ],
+      steps: [
+        { n: "1", title: "3D CBCT scan & planning", body: "A micrometer-precise 3D scan is reviewed by Dr. Vidović and your case is planned digitally — including a surgical guide if needed." },
+        { n: "2", title: "Implant placement", body: "Under local anaesthetic (sedation available) the implant is placed through a small incision. About 60 minutes per implant; most patients drive themselves home." },
+        { n: "3", title: "Healing · 3–6 months", body: "The implant fuses with your bone. You wear a natural-looking temporary. No dietary restrictions after week one." },
+        { n: "4", title: "Final crown", body: "Milled in our in-house lab from zirconia or E.max, shade-matched to your neighbouring teeth. Fitted in a single appointment." },
+      ],
+      visits: [
+        { label: "Visit 1", tag: "Day 1 · 1 day in Split", body: "Consultation, CBCT scan, implant placement and temporary crown fitted same day. You can fly home the next morning." },
+        { label: "Visit 2", tag: "3–6 months later · 5–7 days", body: "Final impressions on day one. Zirconia crown milled and fitted during the week. Hygienic check and you're done." },
+      ],
+      materials: [
+        { initials: "ST", name: "Straumann", body: "Swiss implants, the world's most researched system. 10-year guarantee." },
+        { initials: "NB", name: "Nobel Biocare", body: "Swedish-American premium alternative for complex cases." },
+        { initials: "ZR", name: "Zirconia crowns", body: "Metal-free, natural-looking, milled in our lab from Katana blocks." },
+        { initials: "EM", name: "E.max (lithium disilicate)", body: "Hand-layered for front teeth where aesthetics matter most." },
+      ],
+      prices: [
+        { label: "Dental implant (Straumann)", sub: "Including surgery, healing abutment", price: "from €950" },
+        { label: "Dental implant (Nobel Biocare)", sub: "Premium alternative for complex cases", price: "from €1,150" },
+        { label: "Implant crown · zirconia", sub: "Milled in our in-house lab", price: "from €450" },
+        { label: "Bone grafting", sub: "When needed to secure the implant", price: "from €350" },
+        { label: "Sinus lift", sub: "Upper jaw, when extra bone is needed", price: "from €600" },
+        { label: "3D CBCT scan", sub: "Deducted from your treatment if you proceed", price: "€80" },
+      ],
+      beforeAfter: [
+        { title: "2 implants + crowns · upper molars", meta: "2 visits · 6 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #6D7A80 0%, #3F4A4F 100%)", afterBg: "linear-gradient(135deg, #E8F2F2 0%, #8AB6C4 100%)" },
+        { title: "Single immediate implant · front tooth", meta: "2 visits · 4 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #7A746B 0%, #4A4238 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #F3EEE6 100%)" },
+      ],
+      faqs: [
+        { q: "How long does a dental implant last?", a: "With ordinary care, a modern Straumann implant should last for the rest of your life. Research shows a 95%+ success rate at 10 years. The crown on top is replaced every 15–20 years as a wear item." },
+        { q: "Is implant surgery painful?", a: "No. The surgery is done under local anaesthetic — many patients tell us they felt less than they expected. Any soreness afterwards is handled with over-the-counter painkillers for a day or two." },
+        { q: "What if I don't have enough bone?", a: "This is routine. We add bone during the same surgery (bone grafting) or lift the sinus floor if we need vertical space in the upper jaw. Only in very rare cases does bone need to heal before the implant goes in." },
+        { q: "Can I fly home the day after surgery?", a: "Yes. Most patients fly the next morning without any issue. We provide a written post-op guide and 24-hour emergency contact until you're settled back home." },
+        { q: "Why Straumann specifically?", a: "Straumann has the deepest body of clinical research of any implant system, 40+ years of data, and a lifetime manufacturer's guarantee on the implant itself. If anything ever goes wrong, you'll have no trouble finding a dentist who can service it." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

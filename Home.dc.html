@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Velura Dental Clinic — a specialist dental clinic in the heart of Split. Implants, veneers and complete smile makeovers with a personal treatment plan, transparent prices and care in your language." />
+<title>Velura Dental Clinic · Split, Croatia — Implants, veneers &amp; smile makeovers</title>
+<meta property="og:title" content="Velura Dental Clinic · Split" />
+<meta property="og:description" content="Your new smile, in the heart of Split. Specialist dentistry for local and international patients." />
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Velura Dental Clinic",
+  "image": "https://veluradental.example/og.jpg",
+  "url": "https://veluradental.example/",
+  "telephone": "+385 21 000 000",
+  "address": { "@type": "PostalAddress", "streetAddress": "Riva 7", "addressLocality": "Split", "postalCode": "21000", "addressCountry": "HR" },
+  "priceRange": "€€",
+  "openingHours": ["Mo-Fr 08:00-20:00", "Sa 09:00-14:00"]
+}
+</script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; }
+  a:hover { color: #0E3B52; }
+  button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; }
+  .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vhide-mob { display: none !important; }
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+    .vcol4-mob { grid-template-columns: 1fr !important; }
+    .vcol6-mob { grid-template-columns: 1fr !important; }
+    .vsplit-mob { grid-template-columns: 1fr !important; }
+    .vhero-mob { padding-top: 48px !important; padding-bottom: 48px !important; }
+    .vhero-title-mob { font-size: 46px !important; }
+  }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="home" hint-size="100%,140px"></dc-import>
+
+<main style="background: #FBFAF7;">
+
+  <!-- 1. HERO -->
+  <section class="vhero-mob" style="position: relative; padding: 72px 28px 96px; overflow: hidden; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 72px; align-items: center;" class="vsplit-mob">
+
+      <div>
+        <div data-reveal style="display: inline-flex; align-items: center; gap: 10px; background: rgba(62,156,154,0.12); color: #0E3B52; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; margin-bottom: 28px;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #3E9C9A;"></span>
+          {{ heroBadge }}
+        </div>
+        <h1 data-reveal class="vhero-title-mob velura-serif" style="font-size: 74px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 24px; letter-spacing: -0.01em;">{{ heroTitleA }}<br />{{ heroTitleB }}</h1>
+        <p data-reveal style="font-size: 19px; line-height: 1.55; color: #5D6B70; margin: 0 0 36px; max-width: 540px;">{{ heroSubtitle }}</p>
+        <div data-reveal style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px;">
+          <a href="Contact.dc.html" style="background: #3E9C9A; color: #FBFAF7; padding: 18px 28px; border-radius: 999px; font-weight: 600; font-size: 15.5px; box-shadow: 0 10px 28px rgba(62,156,154,0.32); display: inline-flex; align-items: center; gap: 10px;" style-hover="{{ heroCtaHover }}">
+            {{ heroBookLabel }}
+            <span style="font-size: 18px;">→</span>
+          </a>
+          <a href="Prices.dc.html" style="background: #FBFAF7; color: #0E3B52; padding: 18px 28px; border-radius: 999px; font-weight: 600; font-size: 15.5px; border: 1px solid rgba(14,59,82,0.15);" style-hover="{{ heroSecHover }}">{{ heroPricesLabel }}</a>
+        </div>
+        <div data-reveal style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px 28px; padding-top: 28px; border-top: 1px solid rgba(14,59,82,0.1); font-size: 13.5px; color: #5D6B70;">
+          <span style="display: inline-flex; align-items: center; gap: 8px;"><span style="color: #D4A24A; font-size: 15px;">★</span> <strong style="color: #0E3B52; font-weight: 700;">4.9</strong> {{ trustRating }}</span>
+          <span style="width: 1px; height: 14px; background: rgba(14,59,82,0.15);" class="vhide-mob"></span>
+          <span><strong style="color: #0E3B52; font-weight: 700;">15+</strong> {{ trustYears }}</span>
+          <span style="width: 1px; height: 14px; background: rgba(14,59,82,0.15);" class="vhide-mob"></span>
+          <span>{{ trustCountries }} <strong style="color: #0E3B52; font-weight: 700;">30+</strong> {{ trustCountriesSuffix }}</span>
+          <span style="width: 1px; height: 14px; background: rgba(14,59,82,0.15);" class="vhide-mob"></span>
+          <span>{{ trustSpoken }}</span>
+        </div>
+      </div>
+
+      <div data-reveal style="position: relative; height: 620px; border-radius: 24px; overflow: hidden; background: #E7EEF2; box-shadow: 0 32px 80px rgba(14,59,82,0.25);">
+        <img src="uploads/velura-treatment-room-01.jpg" alt="Bright treatment room with sea view" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <!-- Floating badge card -->
+        <div style="position: absolute; bottom: 28px; left: 28px; right: 28px; background: rgba(251,250,247,0.97); backdrop-filter: blur(12px); border-radius: 16px; padding: 20px 22px; display: flex; align-items: center; gap: 16px;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #F3EEE6; display: flex; align-items: center; justify-content: center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E3B52" stroke-width="1.6"><path d="M12 2a5 5 0 0 0-5 5v3H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-2V7a5 5 0 0 0-5-5z"/></svg>
+          </div>
+          <div style="flex: 1;">
+            <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: #5D6B70; font-weight: 600;">{{ guaranteeHead }}</div>
+            <div class="velura-serif" style="font-size: 20px; font-weight: 600; color: #0E3B52; line-height: 1.2;">{{ guaranteeBody }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. WHY VELURA -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 56px; flex-wrap: wrap;">
+        <div style="max-width: 640px;">
+          <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">{{ whyTag }}</div>
+          <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">{{ whyTitle }}</h2>
+        </div>
+        <p style="max-width: 420px; color: #5D6B70; font-size: 17px; line-height: 1.6; margin: 0;">{{ whySub }}</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;" class="vcol4-mob">
+        <sc-for list="{{ whyCards }}" as="c" hint-placeholder-count="4">
+          <article data-reveal style="background: #F3EEE6; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 20px; min-height: 320px;" style-hover="{{ cardHover }}">
+            <div style="width: 52px; height: 52px; border-radius: 14px; background: #FBFAF7; display: flex; align-items: center; justify-content: center; color: #0E3B52;" dangerouslySetInnerHTML="{{ c.iconHtml }}"></div>
+            <h3 class="velura-serif" style="font-size: 24px; font-weight: 600; color: #0E3B52; margin: 0; line-height: 1.2;">{{ c.title }}</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #5D6B70; margin: 0; flex: 1;">{{ c.body }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURED TREATMENTS -->
+  <section style="padding: 112px 28px; background: #F3EEE6;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 56px; flex-wrap: wrap;">
+        <div style="max-width: 640px;">
+          <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Treatments</div>
+          <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Everything under one roof, by the people who do it every day.</h2>
+        </div>
+        <a href="Treatments.dc.html" style="color: #0E3B52; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 10px 2px; border-bottom: 1px solid #0E3B52;">See all treatments →</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="vcol3-mob">
+        <sc-for list="{{ featuredTreatments }}" as="t" hint-placeholder-count="6">
+          <a href="{{ t.slug }}" data-reveal style="background: #FBFAF7; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px; color: #1C2528; min-height: 260px; border: 1px solid rgba(14,59,82,0.05);" style-hover="{{ treatHover }}">
+            <div style="display: flex; justify-content: space-between; align-items: start; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: #F3EEE6; display: flex; align-items: center; justify-content: center; color: #0E3B52;" dangerouslySetInnerHTML="{{ t.iconHtml }}"></div>
+              <span class="velura-mono" style="font-size: 12.5px; color: #3E9C9A; font-weight: 500; padding: 6px 10px; background: rgba(62,156,154,0.1); border-radius: 999px;">{{ t.from }}</span>
+            </div>
+            <div style="flex: 1;">
+              <h3 class="velura-serif" style="font-size: 26px; font-weight: 600; color: #0E3B52; margin: 0 0 10px; line-height: 1.15; letter-spacing: -0.005em;">{{ t.name }}</h3>
+              <p style="font-size: 15px; line-height: 1.55; color: #5D6B70; margin: 0;">{{ t.lead }}</p>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #0E3B52; font-weight: 600; font-size: 14px;">Learn more <span style="font-size: 16px;">→</span></div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 72px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— How it works for international patients</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 20px; letter-spacing: -0.01em;">From your first photo to your new smile — in four unhurried steps.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #5D6B70; margin: 0;">We plan every visit before you fly. You know the price, the schedule and the result — before you leave home.</p>
+      </div>
+
+      <div style="position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;" class="vcol4-mob">
+        <div class="vhide-mob" style="position: absolute; top: 44px; left: 10%; right: 10%; height: 1px; background: repeating-linear-gradient(to right, rgba(62,156,154,0.5) 0 6px, transparent 6px 12px);"></div>
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div data-reveal style="position: relative; background: transparent; display: flex; flex-direction: column; gap: 18px;">
+            <div style="width: 88px; height: 88px; border-radius: 50%; background: #FBFAF7; border: 2px solid #3E9C9A; color: #0E3B52; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; box-shadow: 0 10px 24px rgba(62,156,154,0.2);">{{ s.n }}</div>
+            <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #3E9C9A; font-weight: 500;">{{ s.tag }}</div>
+            <h3 class="velura-serif" style="font-size: 24px; font-weight: 600; color: #0E3B52; margin: 0; line-height: 1.2;">{{ s.title }}</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #5D6B70; margin: 0;">{{ s.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <div data-reveal style="margin-top: 56px;">
+        <a href="International.dc.html" style="display: inline-flex; align-items: center; gap: 10px; background: #0E3B52; color: #FBFAF7; padding: 18px 28px; border-radius: 999px; font-weight: 600; font-size: 15.5px;" style-hover="{{ darkCtaHover }}">Plan your visit <span style="font-size: 18px;">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BEFORE / AFTER -->
+  <section style="padding: 112px 28px; background: #F3EEE6;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 56px; flex-wrap: wrap;">
+        <div style="max-width: 640px;">
+          <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Before &amp; after</div>
+          <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Drag the slider. See the difference.</h2>
+        </div>
+        <a href="Gallery.dc.html" style="color: #0E3B52; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 10px 2px; border-bottom: 1px solid #0E3B52;">See the full smile gallery →</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="vcol3-mob">
+        <div data-reveal><dc-import name="BeforeAfter" title="6× E.max veneers" meta="5 visits · 6 days" before-caption="" after-caption="" before-bg="linear-gradient(135deg, #8A8378 0%, #635A51 100%)" after-bg="linear-gradient(135deg, #F3EEE6 0%, #D4E4EA 60%, #3E9C9A 100%)" height="{{ 340 }}" hint-size="100%,420px"></dc-import></div>
+        <div data-reveal><dc-import name="BeforeAfter" title="2 implants + crowns" meta="2 visits · 6 months" before-caption="" after-caption="" before-bg="linear-gradient(135deg, #6D7A80 0%, #3F4A4F 100%)" after-bg="linear-gradient(135deg, #E8F2F2 0%, #8AB6C4 100%)" height="{{ 340 }}" hint-size="100%,420px"></dc-import></div>
+        <div data-reveal><dc-import name="BeforeAfter" title="Smile makeover" meta="8 visits · 7 days" before-caption="" after-caption="" before-bg="linear-gradient(135deg, #948A7D 0%, #5D5447 100%)" after-bg="linear-gradient(135deg, #FBFAF7 0%, #EFDFBB 60%, #D4A24A 100%)" height="{{ 340 }}" hint-size="100%,420px"></dc-import></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PATIENT REVIEWS -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 48px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Patients talk</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em; max-width: 720px;">We'd rather let them say it.</h2>
+      </div>
+      <div data-reveal><dc-import name="ReviewCarousel" hint-size="100%,460px"></dc-import></div>
+    </div>
+  </section>
+
+  <!-- 7. TECHNOLOGY -->
+  <section style="padding: 112px 28px; background: #0E3B52; color: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: center;" class="vsplit-mob">
+      <div data-reveal style="height: 520px; border-radius: 24px; background: #0E3B52; position: relative; overflow: hidden; box-shadow: 0 28px 60px rgba(0,0,0,0.3);">
+        <img src="uploads/cbct-scanner-detail.jpg" alt="CBCT scanner detail" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; bottom: 28px; left: 28px; right: 28px; background: rgba(251,250,247,0.95); border-radius: 16px; padding: 18px 22px; color: #0E3B52;">
+          <div class="velura-mono" style="font-size: 11px; letter-spacing: 0.16em; color: #3E9C9A; margin-bottom: 4px;">CBCT · 3D IMAGING</div>
+          <div class="velura-serif" style="font-size: 22px; font-weight: 600;">0.075 mm voxel — micrometer accuracy</div>
+        </div>
+      </div>
+      <div data-reveal>
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Technology</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #FBFAF7; margin: 0 0 24px; letter-spacing: -0.01em;">Digital from day one. Precise by design.</h2>
+        <p style="font-size: 17.5px; line-height: 1.65; color: rgba(255,255,255,0.78); margin: 0 0 36px; max-width: 540px;">Every case is planned in 3D before a single instrument is picked up. Scanner → software → milling, all in our own lab, meters from the chair.</p>
+        <div class="vcol2-mob" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; border-radius: 16px; overflow: hidden; background: rgba(255,255,255,0.08);">
+          <sc-for list="{{ techItems }}" as="t" hint-placeholder-count="4">
+            <div style="background: #0E3B52; padding: 22px 24px;">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(62,156,154,0.2); color: #3E9C9A; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;" dangerouslySetInnerHTML="{{ t.iconHtml }}"></div>
+              <div class="velura-serif" style="font-size: 20px; font-weight: 600; margin-bottom: 4px; color: #FBFAF7;">{{ t.name }}</div>
+              <div style="font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.5;">{{ t.body }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ PREVIEW -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 980px; margin: 0 auto;">
+      <div data-reveal style="display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 44px; flex-wrap: wrap;">
+        <div>
+          <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— FAQ</div>
+          <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Common questions,<br />honestly answered.</h2>
+        </div>
+        <a href="FAQ.dc.html" style="color: #0E3B52; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 10px 2px; border-bottom: 1px solid #0E3B52;">All 20+ questions →</a>
+      </div>
+      <div data-reveal><dc-import name="FaqAccordion" items="{{ faqItems }}" hint-size="100%,400px"></dc-import></div>
+    </div>
+  </section>
+
+  <!-- 9. CTA BAND -->
+  <section style="padding: 32px 28px 112px; background: #FBFAF7;">
+    <div data-reveal style="max-width: 1180px; margin: 0 auto; background: linear-gradient(135deg, #0E3B52 0%, #1A5673 100%); border-radius: 28px; padding: 64px 56px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 48px; align-items: center; position: relative; overflow: hidden;" class="vsplit-mob">
+      <div style="position: absolute; inset: 0; background: radial-gradient(circle at 85% 20%, rgba(62,156,154,0.25) 0%, transparent 60%);"></div>
+      <div style="position: relative;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 16px;">— Free online consultation</div>
+        <h2 class="velura-serif" style="font-size: 44px; line-height: 1.1; font-weight: 500; color: #FBFAF7; margin: 0 0 16px; letter-spacing: -0.01em;">Not sure what you need? Send us your X-ray and get a free treatment plan.</h2>
+        <p style="color: rgba(255,255,255,0.78); font-size: 17px; line-height: 1.6; margin: 0; max-width: 520px;">Written plan with fixed prices within 48 hours. No pressure, no card, no catch.</p>
+      </div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 12px;">
+        <a href="Contact.dc.html" style="background: #3E9C9A; color: #FBFAF7; padding: 20px 28px; border-radius: 999px; font-weight: 600; font-size: 16px; text-align: center; box-shadow: 0 10px 28px rgba(62,156,154,0.32);" style-hover="{{ heroCtaHover }}">Get a free plan →</a>
+        <a href="{{ whatsappHref }}" style="background: transparent; color: #FBFAF7; padding: 18px 28px; border-radius: 999px; font-weight: 600; font-size: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; justify-content: center; gap: 10px;" style-hover="{{ wsHover }}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. LOCATION -->
+  <section style="padding: 0 28px 112px; background: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px; max-width: 640px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Find us</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">On the Riva, with the sea at your back.</h2>
+      </div>
+      <div data-reveal style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px;" class="vsplit-mob">
+        <div style="position: relative; height: 480px; border-radius: 20px; overflow: hidden; background: #E7EEF2;">
+          <iframe src="https://www.google.com/maps?q=Riva,+21000+Split,+Croatia&amp;z=16&amp;output=embed" title="Map: Riva, Split" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block;"></iframe>
+        </div>
+        <div style="background: #F3EEE6; border-radius: 20px; padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
+          <div>
+            <div class="velura-serif" style="font-size: 30px; font-weight: 600; color: #0E3B52; margin-bottom: 8px; line-height: 1.2;">Velura Dental Clinic</div>
+            <div style="font-size: 16px; line-height: 1.6; color: #5D6B70;">Riva 7, 21000 Split<br />Croatia</div>
+          </div>
+
+          <div style="font-size: 14.5px; line-height: 1.75; color: #5D6B70;">
+            <div style="display: flex; justify-content: space-between; gap: 20px;"><span>Mon–Fri</span><strong style="color: #0E3B52;">08:00 – 20:00</strong></div>
+            <div style="display: flex; justify-content: space-between; gap: 20px;"><span>Saturday</span><strong style="color: #0E3B52;">09:00 – 14:00</strong></div>
+            <div style="display: flex; justify-content: space-between; gap: 20px;"><span>Sunday</span><span style="color: #8798A0;">closed</span></div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.55; color: #5D6B70; padding-top: 20px; border-top: 1px solid rgba(14,59,82,0.1);">
+            <div style="display: flex; gap: 10px; align-items: start;"><span style="color: #3E9C9A;">↳</span> 10 min walk from the Split ferry port and bus station</div>
+            <div style="display: flex; gap: 10px; align-items: start;"><span style="color: #3E9C9A;">↳</span> 25 min drive from Split Airport (transfer provided)</div>
+            <div style="display: flex; gap: 10px; align-items: start;"><span style="color: #3E9C9A;">↳</span> Public parking nearby · 5 min walk</div>
+          </div>
+
+          <a href="Contact.dc.html" style="background: #0E3B52; color: #FBFAF7; padding: 16px 24px; border-radius: 999px; font-weight: 600; font-size: 15px; text-align: center; margin-top: 10px;" style-hover="{{ darkCtaHover }}">Get directions &amp; book →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  state = { lang: (window.VELURA && window.VELURA.getLang && window.VELURA.getLang()) || "EN" };
+  componentDidMount() {
+    if (window.VELURA && window.VELURA.initReveal) {
+      setTimeout(() => window.VELURA.initReveal(), 80);
+      this._mo = new MutationObserver(() => window.VELURA.initReveal());
+      this._mo.observe(document.body, { childList: true, subtree: true });
+    }
+    this._onLang = (e) => this.setState({ lang: (e && e.detail) || window.VELURA.getLang() });
+    window.addEventListener("velura:lang", this._onLang);
+  }
+  componentWillUnmount() {
+    if (this._mo) this._mo.disconnect();
+    window.removeEventListener("velura:lang", this._onLang);
+  }
+
+  renderVals() {
+    const V = window.VELURA || {};
+    const t = V.t || ((k) => k);
+    const ic = (svg) => ({ __html: svg });
+
+    const whyCardsEN = [
+      { titleKey: "why.c1.title", bodyKey: "why.c1.body" },
+      { titleKey: "why.c2.title", bodyKey: "why.c2.body" },
+      { titleKey: "why.c3.title", bodyKey: "why.c3.body" },
+      { titleKey: "why.c4.title", bodyKey: "why.c4.body" },
+    ];
+    void whyCardsEN;
+    const whyCards = [
+      { title: "Specialist team", body: "Implantology, prosthetics, endodontics and orthodontics — four specialists under one roof, consulting on your case together.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>') },
+      { title: "Digital dentistry", body: "3D CBCT scans, intraoral scanner, Digital Smile Design and an in-house lab milling your crowns while you walk the Riva.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M8 10l3 2-3 2M16 10l-3 2 3 2"/></svg>') },
+      { title: "Transparent prices", body: "A written treatment plan with fixed prices before anything starts. If the plan changes mid-treatment, you approve first — always.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>') },
+      { title: "Guarantee", body: "Up to 10 years on implants, 5 years on crowns and veneers — written, in your language, honoured anywhere in Europe.",
+        iconHtml: ic('<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>') },
+    ];
+
+    const featuredTreatments = (V.TREATMENTS || []).slice(0, 6).map((t, i) => {
+      const icons = [
+        '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c-2 0-3 1.5-3 3v4c0 2 1 10 3 10s3-8 3-10V6c0-1.5-1-3-3-3z"/><path d="M9 10h6"/></svg>',
+        '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M6 8h12M8 16h8"/><circle cx="7" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="17" cy="12" r="1.5" fill="currentColor"/></svg>',
+        '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L9 8h6l-3-6zM12 22c-5 0-8-4-8-8 0-4 3-7 8-7s8 3 8 7c0 4-3 8-8 8z"/></svg>',
+        '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="6" width="14" height="12" rx="2"/><path d="M8 10h8M8 14h5"/></svg>',
+        '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6M12 22v-4M4 12h4M16 12h4M6 6l3 3M15 15l3 3M6 18l3-3M15 9l3-3"/><circle cx="12" cy="12" r="3"/></svg>',
+        '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2 2 6-6"/></svg>',
+      ];
+      return { ...t, iconHtml: ic(icons[i % icons.length]) };
+    });
+
+    const steps = [
+      { n: "1", tag: "~ 5 min", title: "Send your X-ray or photos", body: "Upload a panoramic X-ray or a few phone photos. We review within 48 hours — free, no obligation." },
+      { n: "2", tag: "within 48 h", title: "Receive your treatment plan", body: "A written, itemised plan with fixed prices. Options explained in plain English, German or Italian." },
+      { n: "3", tag: "your schedule", title: "Visit us in Split", body: "Free airport transfer. Partner apartments or hotels, 2–8 minutes from the clinic. A coordinator who speaks your language." },
+      { n: "4", tag: "life, better", title: "Leave with your new smile", body: "A written guarantee and follow-up by video call and email, long after you're home." },
+    ];
+
+    const techItems = [
+      { name: "CBCT 3D scan", body: "0.075 mm precision, one-third the dose of conventional panoramics.",
+        iconHtml: ic('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>') },
+      { name: "Intraoral scanner", body: "Digital impressions in 90 seconds — no gooey trays, no gag.",
+        iconHtml: ic('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0M8 12v2M16 12v2M12 12v4"/></svg>') },
+      { name: "Dental microscope", body: "Up to 25× magnification for root canals most clinics would extract.",
+        iconHtml: ic('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7" r="3"/><path d="M12 10v6M9 20h6M7 16l5-6 5 6"/></svg>') },
+      { name: "In-house lab", body: "Zirconia and E.max milled meters from your chair. Faster, better.",
+        iconHtml: ic('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3v6l-5 10a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-10V3"/><path d="M8 3h8"/></svg>') },
+    ];
+
+    const faqItems = [
+      { q: "Is the consultation really free?", a: "Yes — for international patients, your first consultation and written treatment plan are free. We also offer free panoramic X-rays when combined with treatment, and a 3D CBCT scan is €80." },
+      { q: "How do I send you my X-ray?", a: "Upload it through our contact form, email it to hello@veluradental.example, or send it over WhatsApp. If you don't have one yet, a few clear phone photos of your smile are enough to start the conversation." },
+      { q: "Is the treatment painful?", a: "Modern dentistry has changed. We use topical and precision anaesthetics, and every operatory is equipped for sedation if you prefer. Most patients tell us a cleaning at their old dentist was more uncomfortable than an implant with us." },
+      { q: "How long do implants take?", a: "The implant placement itself takes about an hour. After that, the implant integrates with your bone for 3 to 6 months. You come back for the final crown, which takes 5 to 7 days in Split. For All-on-4, you leave with fixed teeth the same week." },
+    ];
+
+    return {
+      heroBadge: t("hero.badge"),
+      heroTitleA: t("hero.titleA"),
+      heroTitleB: t("hero.titleB"),
+      heroSubtitle: t("hero.subtitle"),
+      heroBookLabel: t("cta.bookFree"),
+      heroPricesLabel: t("cta.seePrices"),
+      trustRating: t("hero.trust.rating"),
+      trustYears: t("hero.trust.years"),
+      trustCountries: t("hero.trust.countries"),
+      trustCountriesSuffix: t("hero.trust.countriesSuffix"),
+      trustSpoken: t("hero.trust.spoken"),
+      guaranteeHead: t("hero.badge.guarantee"),
+      guaranteeBody: t("hero.badge.guaranteeBody"),
+      whyTag: t("why.tag"),
+      whyTitle: t("why.title"),
+      whySub: t("why.sub"),
+      whyCards,
+      featuredTreatments,
+      steps,
+      techItems,
+      faqItems,
+      heroCtaHover: { background: "#0E3B52", boxShadow: "0 12px 32px rgba(14,59,82,0.3)", transform: "translateY(-1px)" },
+      heroSecHover: { background: "#F3EEE6", borderColor: "#0E3B52" },
+      darkCtaHover: { background: "#3E9C9A", transform: "translateY(-1px)" },
+      wsHover: { background: "rgba(255,255,255,0.08)" },
+      cardHover: { background: "#EEE4D3", transform: "translateY(-2px)" },
+      treatHover: { boxShadow: "0 16px 32px rgba(14,59,82,0.1)", transform: "translateY(-2px)", borderColor: "rgba(62,156,154,0.3)" },
+      whatsappHref: V.CONTACT ? V.CONTACT.whatsappHref : "https://wa.me/38521000000",
+    };
+  }
+}
+</script>
+</body>
+</html>

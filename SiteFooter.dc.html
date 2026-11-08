@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="velura.js"></script>
+<style>
+  @media (max-width: 860px) {
+    .vfooter-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .vfooter-outer { padding-top: 48px !important; padding-bottom: 32px !important; margin-top: 48px !important; }
+    .vfooter-base { flex-direction: column; align-items: flex-start !important; margin-top: 32px !important; }
+  }
+</style>
+</helmet>
+<footer class="vfooter-outer" style="background: #0E3B52; color: #CBD6DC; padding: 80px 28px 28px; margin-top: 80px;">
+  <div style="max-width: 1280px; margin: 0 auto;">
+    <div class="vfooter-grid" style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 56px;">
+
+      <div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px; color: #FBFAF7; margin-bottom: 20px;">
+          <span class="velura-serif" style="font-size: 34px; font-weight: 600; letter-spacing: 0.24em; line-height: 1;">VELURA</span>
+          <svg width="100" height="9" viewBox="0 0 100 9" fill="none" style="margin-top: 4px;"><path d="M2 5 Q 25 -1 50 4 T 98 3" stroke="#3E9C9A" stroke-width="1.5" fill="none" stroke-linecap="round" /></svg>
+          <span style="font-size: 10px; letter-spacing: 0.28em; color: rgba(255,255,255,0.55); font-weight: 500;">DENTAL CLINIC · SPLIT</span>
+        </div>
+        <p style="color: #CBD6DC; font-size: 15px; line-height: 1.6; max-width: 320px; margin: 0 0 24px;">{{ description }}</p>
+
+        <div style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 10px; letter-spacing: 0.1em; text-transform: uppercase;">{{ weSpeak }}</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="font-size: 13px; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;">English</span>
+          <span style="font-size: 13px; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;">Deutsch</span>
+          <span style="font-size: 13px; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;">Italiano</span>
+          <span style="font-size: 13px; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;">Hrvatski</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="color: #FBFAF7; font-size: 14px; text-transform: uppercase; letter-spacing: 0.14em; margin: 0 0 20px; font-weight: 600;">{{ visitHead }}</h4>
+        <p style="font-size: 15px; line-height: 1.7; margin: 0 0 18px; color: #CBD6DC;">
+          Velura Dental Clinic<br />
+          {{ address }}
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+          <a href="{{ phoneHref }}" style="color: #FBFAF7;">☎ &nbsp;{{ phone }}</a>
+          <a href="{{ whatsappHref }}" style="color: #FBFAF7;">💬 &nbsp;WhatsApp</a>
+          <a href="{{ emailHref }}" style="color: #FBFAF7;">✉ &nbsp;{{ email }}</a>
+        </div>
+
+        <h4 style="color: #FBFAF7; font-size: 14px; text-transform: uppercase; letter-spacing: 0.14em; margin: 28px 0 14px; font-weight: 600;">{{ hoursHead }}</h4>
+        <div style="font-size: 14.5px; line-height: 1.8; color: #CBD6DC;">
+          <div>{{ hoursWeek }} &nbsp; 08:00 – 20:00</div>
+          <div>{{ hoursSat }} &nbsp; 09:00 – 14:00</div>
+          <div>{{ hoursSun }} &nbsp; &nbsp; {{ closed }}</div>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="color: #FBFAF7; font-size: 14px; text-transform: uppercase; letter-spacing: 0.14em; margin: 0 0 20px; font-weight: 600;">{{ clinicHead }}</h4>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+          <sc-for list="{{ navLinks }}" as="n" hint-placeholder-count="9">
+            <a href="{{ n.href }}" style="color: #CBD6DC;">{{ n.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="color: #FBFAF7; font-size: 14px; text-transform: uppercase; letter-spacing: 0.14em; margin: 0 0 20px; font-weight: 600;">{{ treatmentsHead }}</h4>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+          <sc-for list="{{ treatmentLinks }}" as="t" hint-placeholder-count="8">
+            <a href="{{ t.slug }}" style="color: #CBD6DC;">{{ t.name }}</a>
+          </sc-for>
+        </div>
+
+        <h4 style="color: #FBFAF7; font-size: 14px; text-transform: uppercase; letter-spacing: 0.14em; margin: 28px 0 14px; font-weight: 600;">{{ paymentHead }}</h4>
+        <div style="font-size: 14px; line-height: 1.7; color: #CBD6DC;">{{ paymentBody }}</div>
+      </div>
+    </div>
+
+    <div class="vfooter-base" style="display: flex; justify-content: space-between; align-items: center; margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 20px;">
+      <div style="font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.6; max-width: 560px;">
+        {{ disclaimer }}<br />
+        {{ byline }}
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px; font-size: 13.5px;">
+        <a href="Privacy.dc.html" style="color: rgba(255,255,255,0.75);">{{ privacyLabel }}</a>
+        <a href="Cookies.dc.html" style="color: rgba(255,255,255,0.75);">{{ cookiesLabel }}</a>
+        <div style="display: flex; gap: 10px; margin-left: 12px;">
+          <a href="#" aria-label="Instagram" style="width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #FBFAF7;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
+          </a>
+          <a href="#" aria-label="Facebook" style="width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #FBFAF7;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.2.4-2 2-2h2V2.1c-.4 0-1.6-.1-3-.1-3 0-5 1.8-5 5.2V10H6v4h3v8h4z" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;560px&quot;}}">
+class Component extends DCLogic {
+  state = { lang: (window.VELURA && window.VELURA.getLang && window.VELURA.getLang()) || "EN" };
+  componentDidMount() {
+    this._onLang = (e) => this.setState({ lang: (e && e.detail) || window.VELURA.getLang() });
+    window.addEventListener("velura:lang", this._onLang);
+  }
+  componentWillUnmount() { window.removeEventListener("velura:lang", this._onLang); }
+
+  renderVals() {
+    const V = window.VELURA || {};
+    const c = V.CONTACT || {};
+    const t = V.t || ((k) => k);
+    const navLinks = (V.NAV || []).map(n => ({ href: n.href, label: t(n.labelKey) }));
+    navLinks.push({ href: "FAQ.dc.html", label: t("nav.faq") });
+    const treatmentLinks = V.TREATMENTS || [];
+    return {
+      address: c.address || "Riva 7, 21000 Split, Croatia",
+      phone: c.phone || "+385 21 000 000",
+      phoneHref: c.phoneHref || "tel:+38521000000",
+      whatsappHref: c.whatsappHref || "https://wa.me/38521000000",
+      email: c.email || "hello@veluradental.example",
+      emailHref: c.emailHref || "mailto:hello@veluradental.example",
+      description: t("footer.description"),
+      weSpeak: t("footer.weSpeak"),
+      visitHead: t("footer.visit"),
+      hoursHead: t("footer.hours"),
+      hoursWeek: t("footer.hoursWeek"),
+      hoursSat: t("footer.hoursSat"),
+      hoursSun: t("footer.hoursSun"),
+      closed: t("footer.closed"),
+      clinicHead: t("footer.clinic"),
+      treatmentsHead: t("footer.treatments"),
+      paymentHead: t("footer.payment"),
+      paymentBody: t("footer.paymentBody"),
+      disclaimer: t("footer.disclaimer"),
+      byline: t("footer.byline"),
+      privacyLabel: t("footer.privacy"),
+      cookiesLabel: t("footer.cookies"),
+      navLinks,
+      treatmentLinks,
+    };
+  }
+}
+</script>
+</body>
+</html>

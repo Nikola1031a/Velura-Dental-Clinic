@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Before and after smile gallery — veneers, implants, All-on-4, whitening and crowns, at Velura Dental Clinic in Split." />
+<title>Smile Gallery · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; }
+  a:hover { color: #0E3B52; }
+  button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; }
+  .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+  }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="gallery" hint-size="100%,140px"></dc-import>
+
+<main>
+  <section style="padding: 72px 28px 48px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Smile gallery</div>
+      <h1 data-reveal class="velura-serif" style="font-size: 72px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 20px; letter-spacing: -0.01em; max-width: 920px;">Real patients. Real timelines. Every photo taken in our clinic.</h1>
+      <p data-reveal style="max-width: 620px; font-size: 18px; line-height: 1.6; color: #5D6B70; margin: 0;">Drag the slider on any case to compare. Filter by treatment below.</p>
+    </div>
+  </section>
+
+  <section style="padding: 32px 28px 24px; background: #F3EEE6; position: sticky; top: 140px; z-index: 50; backdrop-filter: blur(8px);">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px;">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+        <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }} <span style="opacity: 0.6; font-weight: 400;">· {{ f.count }}</span></button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding: 32px 28px 112px; background: #F3EEE6;">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="vcol3-mob">
+      <sc-for list="{{ visible }}" as="c" hint-placeholder-count="9">
+        <div data-reveal style="display: flex; flex-direction: column; gap: 10px;">
+          <dc-import name="BeforeAfter" title="{{ c.title }}" meta="{{ c.meta }}" before-caption="{{ c.beforeCap }}" after-caption="{{ c.afterCap }}" before-bg="{{ c.beforeBg }}" after-bg="{{ c.afterBg }}" height="{{ 320 }}" hint-size="100%,400px"></dc-import>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 0 6px;">
+            <span class="velura-mono" style="font-size: 11.5px; color: #3E9C9A; letter-spacing: 0.16em; text-transform: uppercase;">{{ c.treatment }}</span>
+            <span style="font-size: 13px; color: #5D6B70;">{{ c.visits }}</span>
+          </div>
+          <p style="font-size: 14.5px; line-height: 1.55; color: #5D6B70; margin: 0 0 0 6px;">{{ c.notes }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding: 0 28px 112px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto; background: #0E3B52; border-radius: 28px; padding: 56px 64px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; color: #FBFAF7;" class="vcol2-mob">
+      <div>
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 14px;">— Your case</div>
+        <h2 class="velura-serif" style="font-size: 40px; line-height: 1.1; font-weight: 500; margin: 0 0 10px;">Your smile could sit next to these.</h2>
+        <p style="font-size: 16px; color: rgba(255,255,255,0.72); margin: 0; max-width: 540px;">Send us your photos and we'll show you — in writing — what we can do with your case, and what it will cost.</p>
+      </div>
+      <a href="Contact.dc.html" style="background: #3E9C9A; color: #FBFAF7; padding: 18px 28px; border-radius: 999px; font-weight: 600; font-size: 15.5px; white-space: nowrap;">Get a free plan →</a>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  state = { filter: "all" };
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+
+  cases = [
+    { treatment: "Veneers", title: "6× E.max veneers · upper", meta: "1 visit · 6 days", visits: "1 visit · 6 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #948A7D 0%, #635A51 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #D4E4EA 60%, #3E9C9A 100%)", notes: "Design agreed over video before Emma flew in. 3 preview smiles reviewed, final shade warmer than initial." },
+    { treatment: "Veneers", title: "10× veneers · smile makeover", meta: "1 visit · 8 days", visits: "1 visit · 8 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A8378 0%, #5D5447 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #EFDFBB 60%, #D4A24A 100%)", notes: "Full upper makeover with gum re-contouring. Anders flew home and took up public speaking." },
+    { treatment: "Implants", title: "2 implants · upper molars", meta: "2 visits · 6 months", visits: "2 visits · 6 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #6D7A80 0%, #3F4A4F 100%)", afterBg: "linear-gradient(135deg, #E8F2F2 0%, #8AB6C4 100%)", notes: "Mild bone grafting at placement. Final crowns at visit 2, five months later." },
+    { treatment: "Implants", title: "Single implant · front tooth", meta: "2 visits · 4 months", visits: "2 visits · 4 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #7A746B 0%, #4A4238 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #F3EEE6 100%)", notes: "Immediate placement after trauma. Temporary same day — no gap in public." },
+    { treatment: "All-on-4", title: "All-on-4 · upper jaw", meta: "2 visits · 4 months", visits: "2 visits · 4 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #5D5447 0%, #3B3328 100%)", afterBg: "linear-gradient(135deg, #D4E4EA 0%, #3E9C9A 100%)", notes: "Markus arrived Monday, left Friday with fixed teeth. Final bridge fitted 4 months later." },
+    { treatment: "All-on-4", title: "All-on-4 · lower jaw", meta: "2 visits · 5 months", visits: "2 visits · 5 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #7A7268 0%, #4A4238 100%)", afterBg: "linear-gradient(135deg, #E8F2F2 0%, #0E3B52 100%)", notes: "No more adhesive, no more slipping. 'First steak in a decade' — patient's words." },
+    { treatment: "Whitening", title: "In-office whitening", meta: "1 visit · 90 min", visits: "1 visit · 90 min", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A7D68 0%, #5D5447 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #E8F2F2 100%)", notes: "Single 90-minute session. Home kit included for touch-ups." },
+    { treatment: "Whitening", title: "Combined whitening", meta: "In-office + home · 2 weeks", visits: "In-office + home · 2 weeks", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A7D68 0%, #5D5447 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #EFDFBB 100%)", notes: "Difficult case — tetracycline from childhood. Longer home-kit regimen." },
+    { treatment: "Crowns", title: "3× zirconia crowns", meta: "1 visit · 5 days", visits: "1 visit · 5 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #6D7A80 0%, #3F4A4F 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #D4E4EA 100%)", notes: "Gum line returned to pink within days. Metal-free, allergy-safe." },
+  ];
+
+  renderVals() {
+    const V = window.VELURA || {};
+    const filter = this.state.filter;
+    const categories = ["All", "Implants", "Veneers", "All-on-4", "Whitening", "Crowns"];
+
+    const counts = {
+      All: this.cases.length,
+      Implants: this.cases.filter(c => c.treatment === "Implants").length,
+      Veneers: this.cases.filter(c => c.treatment === "Veneers").length,
+      "All-on-4": this.cases.filter(c => c.treatment === "All-on-4").length,
+      Whitening: this.cases.filter(c => c.treatment === "Whitening").length,
+      Crowns: this.cases.filter(c => c.treatment === "Crowns").length,
+    };
+
+    const filters = categories.map(cat => {
+      const key = cat.toLowerCase();
+      const active = (key === "all" && filter === "all") || key === filter;
+      return {
+        label: cat,
+        count: counts[cat],
+        onClick: () => this.setState({ filter: key }),
+        style: {
+          padding: "10px 18px",
+          borderRadius: "999px",
+          border: "1px solid " + (active ? "#0E3B52" : "rgba(14,59,82,0.15)"),
+          background: active ? "#0E3B52" : "#FBFAF7",
+          color: active ? "#FBFAF7" : "#0E3B52",
+          fontSize: "13.5px",
+          fontWeight: 600,
+          cursor: "pointer",
+          fontFamily: "inherit",
+          transition: "all 180ms ease",
+        },
+      };
+    });
+
+    const visible = filter === "all"
+      ? this.cases
+      : this.cases.filter(c => c.treatment.toLowerCase() === filter);
+
+    return { filters, visible };
+  }
+}
+</script>
+</body>
+</html>

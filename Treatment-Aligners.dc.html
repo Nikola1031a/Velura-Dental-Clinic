@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Invisible aligners &amp; orthodontics in Split from €2,400. Full case planned in 3D." />
+<title>Invisible aligners · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#1C2528;background:#FBFAF7;-webkit-font-smoothing:antialiased}*,*::before,*::after{box-sizing:border-box}a{color:#3E9C9A;text-decoration:none}a:hover{color:#0E3B52}button{font-family:inherit}</style>
+</helmet>
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+<dc-import name="TreatmentPage"
+  treatment-name="Invisible aligners &amp; orthodontics"
+  short-name="aligners"
+  category="Orthodontics"
+  intro="Clear, removable aligners that straighten your teeth without anyone knowing. Planned in 3D before you start — see your finished smile before day one."
+  from="from €2,400"
+  hero-bg="linear-gradient(135deg, #D4E4EA 0%, #8AB6C4 50%, #0E3B52 100%)"
+  hero-image="invisalign-tray-closeup.jpg"
+  for-who="{{ forWho }}" steps="{{ steps }}"
+  visits-intro="Aligners are a journey rather than a trip — most visits happen remotely. For international patients, we plan your treatment in Split on a short visit, then ship aligners to you in batches with video check-ins between."
+  visits="{{ visits }}" materials="{{ materials }}" prices="{{ prices }}" before-after="{{ beforeAfter }}" faqs="{{ faqs }}"
+  hint-size="100%,100%"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      forWho: [
+        "Your teeth are crowded, crooked, or have shifted since your childhood braces came off.",
+        "You want to straighten your smile without metal brackets or wires at your age.",
+        "You have mild to moderate spacing, overbite, underbite, or crossbite that can be corrected without surgery.",
+        "You're preparing for veneers and want your teeth in the right position before they're reshaped.",
+      ],
+      steps: [
+        { n: "1", title: "3D scan & ClinCheck preview", body: "A digital scan of your teeth becomes a 3D treatment simulation. You see — before paying a cent — exactly how your teeth will move and what your result will look like." },
+        { n: "2", title: "First set of trays", body: "Your trays are made by Invisalign and shipped to our clinic. You collect them in Split with a fitting and instructions. Attachments are bonded if needed." },
+        { n: "3", title: "Monthly progression · at home", body: "You wear each tray 22 hours a day and switch to the next every 1–2 weeks. Video check-ins every 6–8 weeks, no need to fly." },
+        { n: "4", title: "Refinements & retainers", body: "Minor refinement trays at the end if needed. Then clear retainers to keep your new smile — forever, honestly." },
+      ],
+      visits: [
+        { label: "Visit 1", tag: "Day 1 · 1 day in Split", body: "Scan, photos, X-rays, ClinCheck review. You approve the plan and we start manufacturing. Attachments bonded once trays arrive." },
+        { label: "Visit 2", tag: "End of treatment · 1 day in Split", body: "Attachments removed, final impressions for retainers, polish, before/after photos. (Mid-treatment check-ins are remote.)" },
+      ],
+      materials: [
+        { initials: "IV", name: "Invisalign (full)", body: "The original and most-researched clear aligner system. Our first choice for complex cases." },
+        { initials: "IL", name: "Invisalign Lite", body: "Up to 14 trays. For minor crowding or relapse." },
+        { initials: "SP", name: "Spark aligners", body: "Alternative premium system with even clearer trays, sometimes faster." },
+        { initials: "V", name: "Vivera retainers", body: "Rugged thermoplastic retainers. We give you two sets so you always have a spare." },
+      ],
+      prices: [
+        { label: "Invisalign · full case", sub: "Planned in 3D, all aligners included, up to 2 refinement rounds", price: "from €2,400" },
+        { label: "Invisalign · short case", sub: "Minor correction, up to 6 months", price: "from €1,400" },
+        { label: "Invisalign · Teen", sub: "Including compliance indicators and eruption tabs", price: "from €2,100" },
+        { label: "Retainers · set of 2", sub: "Vivera, keep your new smile", price: "€220" },
+        { label: "Replacement retainer", sub: "If you lose one — we keep your digital file", price: "€95" },
+      ],
+      beforeAfter: [
+        { title: "Mild crowding · upper arch", meta: "Full case · 9 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A7D68 0%, #5D5447 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #D4E4EA 100%)" },
+        { title: "Relapse after childhood braces", meta: "Full case · 14 months", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #7A746B 0%, #4A4238 100%)", afterBg: "linear-gradient(135deg, #E8F2F2 0%, #3E9C9A 100%)" },
+      ],
+      faqs: [
+        { q: "How long does treatment take?", a: "Most adult cases take 6 to 18 months. The exact number depends on how much movement your teeth need — your ClinCheck preview tells you precisely before you start." },
+        { q: "Will anyone see the aligners?", a: "Most people won't notice. Attachments (small tooth-coloured 'bumps' bonded to some teeth) help the aligners grip; they're matched to your tooth colour. From speaking distance, your trays are invisible." },
+        { q: "Can I eat with them in?", a: "No — you take them out to eat and drink anything other than water, then brush and pop them back in. You wear them 22 hours a day, so plan meals rather than snack." },
+        { q: "Do I need to fly to Split for every check-up?", a: "No. For international patients we do an initial visit (scan, plan, attachments) and a final visit (attachment removal, retainers). Everything in between is by video — we see photos of your progress every 6–8 weeks." },
+        { q: "What if the aligners don't finish the job?", a: "Your plan includes up to two rounds of refinement trays — additional aligners if the final result needs more work. For 90%+ of cases, one round is all that's needed." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

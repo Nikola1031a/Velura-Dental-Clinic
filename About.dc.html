@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Velura Dental Clinic — a specialist clinic in Split, founded in 2010, rebuilt in 2021. Our story, our technology and our standards." />
+<title>About · Velura Dental Clinic · Split</title>
+<meta property="og:title" content="About · Velura Dental Clinic" />
+<meta property="og:description" content="A specialist dental clinic in Split — our story, our team, our standards." />
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; color: #1C2528; background: #FBFAF7; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: #3E9C9A; text-decoration: none; } a:hover { color: #0E3B52; } button { font-family: inherit; }
+  .velura-serif { font-family: 'Cormorant Garamond', serif; } .velura-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1); }
+  [data-reveal][data-revealed] { opacity: 1; transform: none; }
+  @media (max-width: 860px) {
+    .vcol2-mob { grid-template-columns: 1fr !important; }
+    .vcol3-mob { grid-template-columns: 1fr !important; }
+    .vcol4-mob { grid-template-columns: 1fr !important; }
+    .vsplit-mob { grid-template-columns: 1fr !important; }
+    .vspace-grid { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+    .vspace-grid > div { height: 240px !important; grid-row: auto !important; }
+  }
+</style>
+</helmet>
+
+<dc-import name="SiteHeader" current="about" hint-size="100%,140px"></dc-import>
+
+<main>
+  <!-- Hero -->
+  <section style="padding: 72px 28px 48px; background: linear-gradient(180deg, #FBFAF7 0%, #F3EEE6 100%);">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— About Velura</div>
+      <h1 data-reveal class="velura-serif" style="font-size: 72px; line-height: 1.02; font-weight: 500; color: #0E3B52; margin: 0 0 24px; letter-spacing: -0.01em; max-width: 900px;">A small clinic. A deliberate one.</h1>
+      <p data-reveal style="max-width: 680px; font-size: 19px; line-height: 1.6; color: #5D6B70; margin: 0;">We opened on the Riva in 2010 with four chairs and a stubborn idea — that specialist European dentistry shouldn't feel rushed, confusing, or cold.</p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section style="padding: 96px 28px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;" class="vsplit-mob">
+      <div data-reveal>
+        <div class="velura-mono" style="font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 16px;">— 2010 → today</div>
+        <h2 class="velura-serif" style="font-size: 42px; line-height: 1.1; font-weight: 500; color: #0E3B52; margin: 0 0 24px; letter-spacing: -0.01em;">Our story.</h2>
+        <div style="display: flex; flex-direction: column; gap: 24px; font-size: 16.5px; line-height: 1.75; color: #5D6B70;">
+          <p style="margin: 0;">Velura began in 2010 as a single-doctor practice above a bakery, two blocks from the Riva. Dr. Luka Vidović had come home after a decade in Vienna with a quiet ambition — to bring specialist-level implantology to Split, without the specialist's aloofness.</p>
+          <p style="margin: 0;">Word spread. Patients arrived first from across the Adriatic, then from across Europe. In 2021 we moved into our current clinic on Riva 7 — purpose-built with four operatories, a sterilisation suite, an in-house milling lab and large windows looking out across the harbour.</p>
+          <p style="margin: 0;">Today we are five specialists, three hygienists, two lab technicians and a coordinator — all working together on every case. Same ambition, more hands.</p>
+        </div>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="height: 420px; border-radius: 20px; background: #E7EEF2; position: relative; overflow: hidden;">
+          <img src="uploads/clinic-exterior-riva.jpg" alt="Velura Dental Clinic on the Riva, Split" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(14,59,82,0.5) 100%); pointer-events: none;"></div>
+          <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; color: #FBFAF7;"><div class="velura-serif" style="font-size: 26px; font-weight: 600;">Riva 7 · Split</div></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div style="padding: 22px; border-radius: 16px; background: #FBFAF7; text-align: center;"><div class="velura-serif" style="font-size: 44px; color: #3E9C9A; font-weight: 600; line-height: 1;">2010</div><div class="velura-mono" style="font-size: 11px; color: #5D6B70; letter-spacing: 0.16em; margin-top: 6px; text-transform: uppercase;">Founded</div></div>
+          <div style="padding: 22px; border-radius: 16px; background: #FBFAF7; text-align: center;"><div class="velura-serif" style="font-size: 44px; color: #3E9C9A; font-weight: 600; line-height: 1;">2021</div><div class="velura-mono" style="font-size: 11px; color: #5D6B70; letter-spacing: 0.16em; margin-top: 6px; text-transform: uppercase;">New clinic</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 48px; max-width: 680px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Mission &amp; values</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">What we believe, written down.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="vcol3-mob">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+          <div data-reveal style="background: #F3EEE6; border-radius: 20px; padding: 36px 32px; min-height: 280px; display: flex; flex-direction: column; gap: 16px;">
+            <div class="velura-serif" style="font-size: 54px; color: #3E9C9A; font-weight: 500; line-height: 0.9;">{{ v.n }}</div>
+            <h3 class="velura-serif" style="font-size: 24px; color: #0E3B52; font-weight: 600; margin: 0; line-height: 1.2;">{{ v.title }}</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #5D6B70; margin: 0;">{{ v.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology & in-house lab -->
+  <section style="padding: 112px 28px; background: #0E3B52; color: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;" class="vsplit-mob">
+      <div data-reveal>
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Technology &amp; in-house lab</div>
+        <h2 class="velura-serif" style="font-size: 52px; line-height: 1.05; font-weight: 500; color: #FBFAF7; margin: 0 0 24px; letter-spacing: -0.01em;">The lab is in the next room.</h2>
+        <p style="font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.78); margin: 0 0 20px; max-width: 540px;">Most clinics send your scans to an outside lab. We don't. Our ceramist works twenty meters from your chair. If a shade isn't quite right, we fix it in the morning, not next week.</p>
+        <p style="font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.78); margin: 0 0 36px; max-width: 540px;">That proximity is why Velura cases fit the first time. And why you leave with permanent teeth, not provisionals waiting for a courier.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <sc-for list="{{ equipment }}" as="e" hint-placeholder-count="5">
+            <div style="display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #3E9C9A; flex-shrink: 0;"></div>
+              <div style="font-size: 15.5px; color: #FBFAF7; font-weight: 500;">{{ e.name }}</div>
+              <div style="flex: 1;"></div>
+              <div class="velura-mono" style="font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.12em;">{{ e.model }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div data-reveal style="height: 580px; border-radius: 24px; background: #0E3B52; position: relative; overflow: hidden;">
+        <img src="uploads/in-house-milling-lab.jpg" alt="In-house milling lab" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Hygiene -->
+  <section style="padding: 112px 28px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Hygiene &amp; sterilisation</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0 0 20px; letter-spacing: -0.01em;">Standards you'd set if it were your family.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #5D6B70; margin: 0; max-width: 620px;">Every instrument is tracked. Every autoclave cycle is logged with a biological indicator. Audited quarterly by an external specialist.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;" class="vcol4-mob">
+        <sc-for list="{{ hygiene }}" as="h" hint-placeholder-count="4">
+          <div data-reveal style="background: #FBFAF7; border-radius: 16px; padding: 24px; min-height: 180px; display: flex; flex-direction: column; gap: 10px;">
+            <div class="velura-mono" style="font-size: 11px; letter-spacing: 0.2em; color: #3E9C9A; text-transform: uppercase;">{{ h.tag }}</div>
+            <div class="velura-serif" style="font-size: 22px; color: #0E3B52; font-weight: 600; line-height: 1.2;">{{ h.title }}</div>
+            <div style="font-size: 14px; line-height: 1.55; color: #5D6B70; flex: 1;">{{ h.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo gallery -->
+  <section style="padding: 112px 28px; background: #FBFAF7;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— A walk through</div>
+        <h2 class="velura-serif" style="font-size: 54px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Our space.</h2>
+      </div>
+      <div class="vspace-grid" style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 16px;">
+        <div data-reveal style="grid-row: span 2; border-radius: 20px; background: #E7EEF2; position: relative; overflow: hidden;">
+          <img src="uploads/reception.jpg" alt="Reception area" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(14,59,82,0.55) 100%); pointer-events: none;"></div>
+          <div style="position: absolute; bottom: 20px; left: 20px; color: #FBFAF7;"><div class="velura-serif" style="font-size: 28px; font-weight: 600;">Reception</div></div>
+        </div>
+        <div data-reveal style="border-radius: 20px; background: #E7EEF2; position: relative; overflow: hidden;"><img src="uploads/treatment-room-01.jpg" alt="Treatment room 1" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" /><div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(255,255,255,0.6) 100%); pointer-events: none;"></div><div style="position: absolute; bottom: 16px; left: 16px;"><div class="velura-serif" style="font-size: 22px; color: #0E3B52; font-weight: 600;">Treatment room 1</div></div></div>
+        <div data-reveal style="border-radius: 20px; background: #E7EEF2; position: relative; overflow: hidden;"><img src="uploads/microscope-suite.jpg" alt="Microscope suite" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" /><div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(14,59,82,0.55) 100%); pointer-events: none;"></div><div style="position: absolute; bottom: 16px; left: 16px; color: #FBFAF7;"><div class="velura-serif" style="font-size: 22px; font-weight: 600;">Microscope suite</div></div></div>
+        <div data-reveal style="border-radius: 20px; background: #E7EEF2; position: relative; overflow: hidden;"><img src="uploads/in-house-lab.jpg" alt="In-house lab" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" /><div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(14,59,82,0.55) 100%); pointer-events: none;"></div><div style="position: absolute; bottom: 16px; left: 16px; color: #FBFAF7;"><div class="velura-serif" style="font-size: 22px; font-weight: 600;">In-house lab</div></div></div>
+        <div data-reveal style="border-radius: 20px; background: #E7EEF2; position: relative; overflow: hidden;"><img src="uploads/sterilisation.jpg" alt="Sterilisation suite" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" /><div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(14,59,82,0.55) 100%); pointer-events: none;"></div><div style="position: absolute; bottom: 16px; left: 16px; color: #FBFAF7;"><div class="velura-serif" style="font-size: 22px; font-weight: 600;">Sterilisation</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section style="padding: 112px 28px; background: #F3EEE6;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div data-reveal style="margin-bottom: 44px; max-width: 760px;">
+        <div class="velura-mono" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #3E9C9A; margin-bottom: 20px;">— Certificates &amp; memberships</div>
+        <h2 class="velura-serif" style="font-size: 48px; line-height: 1.05; font-weight: 500; color: #0E3B52; margin: 0; letter-spacing: -0.01em;">Our professional record.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;" class="vcol4-mob">
+        <sc-for list="{{ certs }}" as="c" hint-placeholder-count="8">
+          <div data-reveal style="background: #FBFAF7; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; min-height: 140px; justify-content: space-between; border: 1px solid rgba(14,59,82,0.06);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(62,156,154,0.14); color: #0E3B52; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 18px;">{{ c.initials }}</div>
+            <div><div style="font-size: 14.5px; color: #0E3B52; font-weight: 600; line-height: 1.25;">{{ c.name }}</div><div class="velura-mono" style="font-size: 11px; color: #8798A0; letter-spacing: 0.12em; margin-top: 4px; text-transform: uppercase;">{{ c.meta }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { if (window.VELURA) setTimeout(() => window.VELURA.initReveal(), 60); }
+  renderVals() {
+    const values = [
+      { n: "01", title: "Time, not haste", body: "Our appointments are longer than most clinics' — on purpose. Unhurried work is more precise, and more comfortable for you." },
+      { n: "02", title: "Written clarity", body: "Every price, every material, every option — on paper, in your language, before anything starts. Then kept as the plan." },
+      { n: "03", title: "One team, one case", body: "Your specialist, your hygienist, your lab technician and your coordinator see your case together. You don't repeat yourself." },
+    ];
+
+    const equipment = [
+      { name: "3D CBCT scanner", model: "Vatech PaX-i3D Green" },
+      { name: "Intraoral scanner", model: "3Shape TRIOS 5" },
+      { name: "Dental microscope", model: "Zeiss OPMI pico" },
+      { name: "In-house milling unit", model: "imes-icore CORiTEC" },
+      { name: "Sintering furnace", model: "Programat S1 1600" },
+    ];
+
+    const hygiene = [
+      { tag: "— 01", title: "Class B autoclaves", body: "Hospital-grade sterilisation for every instrument. Biological indicator logged every cycle." },
+      { tag: "— 02", title: "Single-use trays", body: "Disposable barriers on every chair, between every patient. No shortcuts." },
+      { tag: "— 03", title: "Dedicated waterlines", body: "Dental unit waterlines flushed and treated daily to hospital standards." },
+      { tag: "— 04", title: "Quarterly external audit", body: "An independent specialist reviews our protocols and logs every three months." },
+    ];
+
+    const certs = [
+      { initials: "HKDM", name: "Croatian Chamber of Dental Medicine (HKDM)", meta: "Member · since 2010" },
+      { initials: "SAC", name: "Straumann Study Club", meta: "Active member" },
+      { initials: "ESE", name: "European Society of Endodontology", meta: "Member" },
+      { initials: "EAO", name: "European Association for Osseointegration", meta: "Member" },
+      { initials: "DSD", name: "Digital Smile Design", meta: "Certified clinic" },
+      { initials: "ISO", name: "ISO 9001 · quality management", meta: "Certified · 2023" },
+    ];
+
+    return { values, equipment, hygiene, certs };
+  }
+}
+</script>
+</body>
+</html>

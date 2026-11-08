@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Zirconia and metal-ceramic crowns and bridges in Split from €290. Milled in our in-house lab, fitted in a single visit." />
+<title>Crowns &amp; bridges · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#1C2528;background:#FBFAF7;-webkit-font-smoothing:antialiased}*,*::before,*::after{box-sizing:border-box}a{color:#3E9C9A;text-decoration:none}a:hover{color:#0E3B52}button{font-family:inherit}</style>
+</helmet>
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+<dc-import name="TreatmentPage"
+  treatment-name="Crowns &amp; bridges"
+  short-name="crowns"
+  category="Prosthetics"
+  intro="A crown is a cap that rebuilds a broken, worn or root-filled tooth from the gum up. A bridge replaces a missing tooth by borrowing strength from the two beside it. Both are milled in our own lab."
+  from="from €290"
+  hero-bg="linear-gradient(135deg, #D4E4EA 0%, #8AB6C4 60%, #3E9C9A 100%)"
+  hero-image="zirconia-crown-under-microscope.jpg"
+  for-who="{{ forWho }}" steps="{{ steps }}"
+  visits-intro="A single-trip treatment for most cases. You arrive, your tooth is prepared, we mill and finish the crown over a few days, you fly home with it fitted."
+  visits="{{ visits }}" materials="{{ materials }}" prices="{{ prices }}" before-after="{{ beforeAfter }}" faqs="{{ faqs }}"
+  hint-size="100%,100%"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      forWho: [
+        "You have a large filling that keeps breaking, or a cracked tooth that twinges when you bite.",
+        "You've had a root canal and need the tooth protected properly so it lasts.",
+        "You have an old metal-ceramic crown with a dark gum line and want a metal-free upgrade.",
+        "You're missing one tooth with healthy neighbours on either side — a bridge may be simpler than an implant.",
+      ],
+      steps: [
+        { n: "1", title: "Diagnosis & shade match", body: "A short appointment to confirm the tooth can be crowned, choose the material and match the shade to your neighbouring teeth." },
+        { n: "2", title: "Preparation & digital scan", body: "The tooth is gently reshaped and scanned in 90 seconds with our intraoral scanner. A temporary crown is fitted the same day." },
+        { n: "3", title: "In-house milling & finishing", body: "Your zirconia or E.max crown is milled in our lab, sintered, glazed and polished. A few days, not a few weeks." },
+        { n: "4", title: "Try-in & final fit", body: "Fit, bite and shade are checked. Final cementation and a polish. You bite, you chew, you leave." },
+      ],
+      visits: [
+        { label: "Days 1–5", tag: "Single-visit treatment", body: "Day 1: preparation, scan, temporary. Days 2–4: lab work in-house. Day 5: try-in, adjustments, final cementation." },
+      ],
+      materials: [
+        { initials: "ZR", name: "Katana zirconia", body: "Japanese zirconia blocks — the strongest metal-free crown option. Multi-layer for front teeth." },
+        { initials: "EM", name: "E.max lithium disilicate", body: "Our first choice for front teeth where translucency matters." },
+        { initials: "MC", name: "Metal-ceramic", body: "The classic, time-tested option. Reliable and affordable for back teeth." },
+        { initials: "VB", name: "Variolink / Multilink", body: "Premium adhesive cements for a seal that lasts decades." },
+      ],
+      prices: [
+        { label: "Zirconia crown", sub: "Metal-free, in-house milled", price: "from €420" },
+        { label: "E.max crown", sub: "Front teeth, maximum aesthetics", price: "from €480" },
+        { label: "Metal-ceramic crown", sub: "Classic, long-lasting", price: "from €290" },
+        { label: "Bridge · 3 units", sub: "Replaces 1 missing tooth", price: "from €1,050" },
+        { label: "Bridge · 4 units", sub: "Replaces 2 adjacent missing teeth", price: "from €1,400" },
+        { label: "Post & core build-up", sub: "When the tooth needs internal reinforcement", price: "from €120" },
+      ],
+      beforeAfter: [
+        { title: "3× zirconia crowns · front", meta: "1 visit · 5 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #6D7A80 0%, #3F4A4F 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #D4E4EA 100%)" },
+        { title: "3-unit zirconia bridge", meta: "1 visit · 6 days", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A7D68 0%, #4A4238 100%)", afterBg: "linear-gradient(135deg, #E8F2F2 0%, #3E9C9A 100%)" },
+      ],
+      faqs: [
+        { q: "Zirconia or metal-ceramic — which is better?", a: "Zirconia is metal-free, more aesthetic and allergy-safe. Metal-ceramic is cheaper and still a good long-term option for back teeth you can't see. We'll show you both and explain honestly which matters for your case." },
+        { q: "How long does a crown last?", a: "Our crowns come with a 5-year written guarantee and typically last 15 to 20+ years. The ceramic itself barely wears; only the margin at the gum line is a wear surface, and good hygiene keeps it sealed." },
+        { q: "Is it painful?", a: "No. The tooth is numbed thoroughly. You might feel some pressure during preparation. Afterwards most patients take nothing stronger than a routine painkiller for a day." },
+        { q: "Can I eat on the temporary?", a: "Yes, but gently — avoid hard crusts and sticky sweets. We build temporaries that will carry you for several days without drama." },
+        { q: "Why not just get an implant?", a: "For a single missing tooth, a bridge is quicker (one week vs six months) and less invasive. We choose implants when the neighbouring teeth are healthy enough not to touch. Dr. Juras will walk you through both options for your case." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

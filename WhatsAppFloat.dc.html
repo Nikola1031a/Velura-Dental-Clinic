@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="velura.js"></script>
+<style>
+  @media (max-width: 1180px) { .velura-wafloat { display: none !important; } }
+  @keyframes velura-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+</style>
+</helmet>
+<a class="velura-wafloat" href="{{ whatsappHref }}" aria-label="Chat on WhatsApp" style="position: fixed; right: 28px; bottom: 28px; z-index: 95; display: flex; align-items: center; gap: 12px;">
+  <div style="background: #FBFAF7; padding: 10px 16px; border-radius: 999px; box-shadow: 0 8px 28px rgba(14,59,82,0.18); font-size: 13.5px; color: #0E3B52; font-weight: 500; white-space: nowrap;">{{ tooltip }}</div>
+  <div style="width: 60px; height: 60px; border-radius: 50%; background: #25D366; box-shadow: 0 10px 28px rgba(37,211,102,0.4); display: flex; align-items: center; justify-content: center; animation: velura-bob 3.2s ease-in-out infinite;">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#FBFAF7"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.7 14.2c-.2.6-1.2 1.1-1.8 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.4-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.6 0l.9-1.1c.2-.3.4-.2.7-.1l1.9 1c.2.1.4.2.5.3 0 .2 0 .8-.2 1.3z"/></svg>
+  </div>
+</a>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;400px&quot;,&quot;height&quot;:&quot;120px&quot;}}">
+class Component extends DCLogic {
+  state = { lang: (window.VELURA && window.VELURA.getLang && window.VELURA.getLang()) || "EN" };
+  componentDidMount() {
+    this._onLang = (e) => this.setState({ lang: (e && e.detail) || window.VELURA.getLang() });
+    window.addEventListener("velura:lang", this._onLang);
+  }
+  componentWillUnmount() { window.removeEventListener("velura:lang", this._onLang); }
+  renderVals() {
+    const V = window.VELURA || {};
+    const c = V.CONTACT || {};
+    const t = V.t || ((k) => k);
+    return {
+      whatsappHref: c.whatsappHref || "https://wa.me/38521000000",
+      tooltip: t("whatsapp.tooltip"),
+    };
+  }
+}
+</script>
+</body>
+</html>

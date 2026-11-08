@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Professional ZOOM! and home teeth whitening in Split from €220. Safe, sensitivity-controlled, visible result in a single session." />
+<title>Teeth whitening · Velura Dental Clinic · Split</title>
+<meta property="og:image" content="uploads/og.jpg" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230E3B52'/><text x='32' y='49' font-family='Cormorant Garamond,Georgia,serif' font-size='48' font-weight='600' text-anchor='middle' fill='%23FFFFFF'>V</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="velura.js"></script>
+<style>body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#1C2528;background:#FBFAF7;-webkit-font-smoothing:antialiased}*,*::before,*::after{box-sizing:border-box}a{color:#3E9C9A;text-decoration:none}a:hover{color:#0E3B52}button{font-family:inherit}</style>
+</helmet>
+<dc-import name="SiteHeader" current="treatments" hint-size="100%,140px"></dc-import>
+<dc-import name="TreatmentPage"
+  treatment-name="Teeth whitening"
+  short-name="whitening"
+  category="Aesthetic dentistry"
+  intro="Years of coffee, tea and wine, undone in ninety minutes. Professional-grade whitening that's safer, stronger and more controlled than anything over the counter."
+  from="from €220"
+  hero-bg="linear-gradient(135deg, #FBFAF7 0%, #E8F2F2 60%, #3E9C9A 100%)"
+  hero-image="zoom-whitening-session.jpg"
+  for-who="{{ forWho }}" steps="{{ steps }}"
+  visits-intro="A single short visit for in-office whitening. Or a two-week regimen you do at home with custom trays. Or both, for the longest-lasting result."
+  visits="{{ visits }}" materials="{{ materials }}" prices="{{ prices }}" before-after="{{ beforeAfter }}" faqs="{{ faqs }}"
+  hint-size="100%,100%"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="WhatsAppFloat" hint-size="100%,100px"></dc-import>
+<dc-import name="MobileBar" hint-size="100%,80px"></dc-import>
+<dc-import name="CookieBanner" hint-size="100%,100px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      forWho: [
+        "Your teeth are structurally healthy but have yellowed with age, coffee, tea or wine.",
+        "You've tried over-the-counter strips with disappointing or uneven results.",
+        "You're preparing for a wedding, a milestone photo or a job change and want a visible lift.",
+        "You're planning veneers or crowns and want to brighten your natural teeth first so the match is lighter.",
+      ],
+      steps: [
+        { n: "1", title: "Clean & assess", body: "A short hygiene visit removes surface stains first and checks there's no decay or sensitivity that would make whitening unwise." },
+        { n: "2", title: "Gum protection", body: "A protective barrier is applied to your gums so only your teeth see the gel." },
+        { n: "3", title: "Three light cycles", body: "Three 15-minute cycles with the ZOOM! LED lamp. You can watch Netflix, read, or doze." },
+        { n: "4", title: "Shade check & home kit", body: "We show you the before/after on the shade guide and send you home with a maintenance kit and two custom trays." },
+      ],
+      visits: [
+        { label: "Day 1", tag: "90 minutes · in-office", body: "In and out in a lunch hour. Result visible immediately. Mild sensitivity may last up to 24 hours; a sensitivity gel is included." },
+        { label: "Days 2–14", tag: "Optional · at home", body: "If you're combining treatments, you wear custom trays with professional gel for 30–60 minutes a day over two weeks." },
+      ],
+      materials: [
+        { initials: "ZM", name: "Philips ZOOM!", body: "World's most researched in-office whitening system. Controlled, safe, repeatable." },
+        { initials: "OP", name: "Opalescence Boost", body: "Alternative in-office system for enamel that's prone to sensitivity." },
+        { initials: "KO", name: "Opalescence PF", body: "Home gel. Potassium nitrate and fluoride to protect the enamel while you brighten." },
+        { initials: "ES", name: "Enamel sealant", body: "Applied after whitening to reduce sensitivity and lock in result." },
+      ],
+      prices: [
+        { label: "In-office whitening (ZOOM!)", sub: "Single visit, 90 minutes", price: "€290" },
+        { label: "Home whitening kit", sub: "Custom trays + professional gel, 2-week protocol", price: "€220" },
+        { label: "Combined whitening", sub: "In-office + home for maximum, longer-lasting result", price: "€390" },
+        { label: "Maintenance top-up gel", sub: "For your custom trays, once a year", price: "€45" },
+        { label: "Hygiene & polish", sub: "Recommended before whitening", price: "€60" },
+      ],
+      beforeAfter: [
+        { title: "In-office whitening · single session", meta: "1 visit · 90 min", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A7D68 0%, #5D5447 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #E8F2F2 100%)" },
+        { title: "Combined whitening", meta: "In-office + home · 2 weeks", beforeCap: "", afterCap: "", beforeBg: "linear-gradient(135deg, #8A7D68 0%, #5D5447 100%)", afterBg: "linear-gradient(135deg, #FBFAF7 0%, #EFDFBB 100%)" },
+      ],
+      faqs: [
+        { q: "Is professional whitening safe for enamel?", a: "Yes. Clinical research shows no permanent effect on enamel structure when it's done by a dentist with the right concentration and gum protection. Over-the-counter strips are far more likely to cause patchy results or chemical burns at the gum line." },
+        { q: "Will my teeth be painful afterwards?", a: "Up to 24 hours of mild sensitivity to cold is normal. We include a desensitising gel in your home kit for the first 48 hours. If you have sensitive teeth to begin with, we use a lower-concentration protocol." },
+        { q: "How long does the result last?", a: "Typically 2–3 years before another in-office session is needed, longer with maintenance at home. Avoiding coffee, tea, red wine and smoking for the first 48 hours protects the result significantly." },
+        { q: "Will whitening work on crowns or veneers?", a: "No — porcelain doesn't change colour. Whiten first; then if you still want crowns or veneers, they can be matched to your new lighter shade." },
+        { q: "Can I whiten if I'm pregnant?", a: "We recommend waiting until after pregnancy and breastfeeding, purely as a precaution. There's no evidence of harm, but the research is limited enough that we'd rather wait." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
